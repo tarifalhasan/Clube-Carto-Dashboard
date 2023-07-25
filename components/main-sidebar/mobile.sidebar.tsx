@@ -10,13 +10,11 @@ import Logo from '@/assets/Logo';
 interface SidebarProps {
   onBackdropClick?: () => void;
   toggled?: boolean;
-  breakPoint?: string;
 }
 
 const MobileSidebar: React.FC<SidebarProps> = ({
   onBackdropClick,
   toggled,
-  breakPoint,
 }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [path, setPath] = useState('/');
@@ -38,7 +36,7 @@ const MobileSidebar: React.FC<SidebarProps> = ({
         transitionDuration={1000}
         onBackdropClick={onBackdropClick}
         toggled={toggled}
-        breakPoint="always"
+        breakPoint="all"
       >
         <Menu
           menuItemStyles={{

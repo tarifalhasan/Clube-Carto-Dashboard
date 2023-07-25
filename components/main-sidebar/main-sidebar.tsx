@@ -8,9 +8,15 @@ import { LiaPeopleCarrySolid } from 'react-icons/lia';
 import Logo from '@/assets/Logo';
 import { ArrowRigh } from '@/assets/svg/icons';
 
-const MainSidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
+interface SidebarProps {
+  collapsed: boolean;
+  collapsedHandler: () => void;
+}
 
+const MainSidebar: React.FC<SidebarProps> = ({
+  collapsed,
+  collapsedHandler,
+}) => {
   const path = usePathname();
   // Function to check if a route is active
   const isRouteActive = (href: any) => {
@@ -18,9 +24,9 @@ const MainSidebar = () => {
   };
 
   return (
-    <div className="flex relative h-full  ">
+    <div className="flex relative bg-[#353A40]   h-full bg-opacity-20   ">
       <Sidebar
-        className=" bg-[#353A40]  h-screen bg-opacity-20 "
+        className=" bg-[#353A40]   h-full bg-opacity-20 "
         collapsed={collapsed}
         transitionDuration={1000}
       >
@@ -121,7 +127,7 @@ const MainSidebar = () => {
         <div>
           <button
             className="sb-button  grid  place-items-center w-8 bg-white h-8 rounded-full shadow"
-            onClick={() => setCollapsed(!collapsed)}
+            onClick={collapsedHandler}
           >
             <span>
               <ArrowRigh />
