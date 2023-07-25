@@ -1,18 +1,130 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ['class'],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+    './assets/**/*.{ts,tsx}',
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      colors: {
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: '#FAFAFA',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        text: {
+          green: 'hsl(var(--green-text))',
+        },
+        skin: {
+          'gray-900': '#292D32',
+          JungleGreen: '#46674B',
+          'gray-950': '#060606',
+          'navbar-boder': 'rgba(0, 0, 0, 0.08)',
+          red: '#EE201C',
+        },
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: 0 },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: 0 },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      fontSize: {
+        '6xl': [
+          '2rem',
+          {
+            lineHeight: '39.01px',
+            letterSpacing: '0.5%',
+            fontWeight: '600',
+          },
+        ],
+        '5xl': [
+          '1.75em',
+          {
+            lineHeight: '39.01px',
+            letterSpacing: '0.5%',
+            fontWeight: '600',
+          },
+        ],
+        '4xl': [
+          '1.375em',
+          {
+            lineHeight: '39.01px',
+            letterSpacing: '0.22px',
+            fontWeight: '400',
+          },
+        ],
+
+        'card-title': [
+          '1.625em',
+          {
+            lineHeight: '39.01px',
+            letterSpacing: '0.22px',
+            fontWeight: '600',
+          },
+        ],
+      },
+      dropShadow: {
+        base: '0px 4px 6px 0px rgba(0, 0, 0, 0.02)',
+      },
+      boxShadow: {
+        main: '0px 4px 6px 0px rgba(0, 0, 0, 0.02)',
+        '5xl': '0px 0px 6px 0px rgba(0, 0, 0, 0.10)',
+        'btn-shadow': '0px 0px 4px 0px rgba(0, 0, 0, 0.15)',
       },
     },
   },
-  plugins: [],
-}
+  plugins: [require('tailwindcss-animate')],
+};
