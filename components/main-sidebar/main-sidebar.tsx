@@ -104,6 +104,38 @@ const MainSidebar: React.FC<SidebarProps> = ({
               Grupos
             </MenuItem>
           </SubMenu>
+          <SubMenu
+            // defaultOpen
+            label="Permissões"
+            component={<Link href={'/permissions'} />}
+            icon={<LiaPeopleCarrySolid />}
+            active={isRouteActive('/permissions')} // Check if route is active
+          >
+            <MenuItem
+              component={<Link href={'/permissions/adicionar-grupo'} />}
+              className=" bg-[#EEEEEE] "
+            >
+              Adicionar grupo
+            </MenuItem>
+            <MenuItem
+              component={<Link href={'/permissions/editar-grupo'} />}
+              className=" bg-[#EEEEEE] "
+            >
+              Editar grupo
+            </MenuItem>
+            <MenuItem
+              component={<Link href={'/permissions/excluir-grupo'} />}
+              className=" bg-[#EEEEEE] "
+            >
+              Excluir grupo
+            </MenuItem>
+            <MenuItem
+              component={<Link href={'/permissions/listar-grupo'} />}
+              className=" bg-[#EEEEEE] "
+            >
+              Listar grupo
+            </MenuItem>
+          </SubMenu>
           <MenuItem
             key="calendar"
             icon={<LiaPeopleCarrySolid />}

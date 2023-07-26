@@ -27,6 +27,25 @@ const associadosButtonData: ButtonGroupType[] = [
   },
 ];
 
+const PermissõesRoutes: ButtonGroupType[] = [
+  {
+    name: 'Adicionar grupo',
+    href: 'adicionar-grupo',
+  },
+  {
+    name: 'Editar grupo',
+    href: 'editar-grupo',
+  },
+  {
+    name: 'Excluir grupo',
+    href: 'excluir-grupo',
+  },
+  {
+    name: 'Listar grupo',
+    href: 'listar-grupo',
+  },
+];
+
 const AssoociadorList: AccociadorListType[] = [
   {
     name: 'Nome do associado',
@@ -71,4 +90,9 @@ const ImportarRemessaList: AccociadorListType[] = [
     id: '4',
   },
 ];
-export { associadosButtonData, AssoociadorList, ImportarRemessaList };
+export {
+  associadosButtonData,
+  AssoociadorList,
+  ImportarRemessaList,
+  PermissõesRoutes,
+};
