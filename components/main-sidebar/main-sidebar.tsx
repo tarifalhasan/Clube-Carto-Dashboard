@@ -1,12 +1,14 @@
 'use client';
-import React, { useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation'; // Import the useRouter hook
-import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import Link from 'next/link';
-import { RxDashboard } from 'react-icons/rx';
-import { LiaPeopleCarrySolid } from 'react-icons/lia';
 import Logo from '@/assets/Logo';
 import { ArrowRigh } from '@/assets/svg/icons';
+import { FinanceiroRoutes, PermissõesRoutes } from '@/constant/data';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation'; // Import the useRouter hook
+import React from 'react';
+import { LiaPeopleCarrySolid } from 'react-icons/lia';
+import { RxDashboard } from 'react-icons/rx';
+import { Menu, MenuItem, Sidebar, SubMenu } from 'react-pro-sidebar';
+import Menuitem from './menu-item';
 
 interface SidebarProps {
   collapsed: boolean;
@@ -105,47 +107,23 @@ const MainSidebar: React.FC<SidebarProps> = ({
             </MenuItem>
           </SubMenu>
           <SubMenu
-            // defaultOpen
             label="Permissões"
             component={<Link href={'/permissions'} />}
             icon={<LiaPeopleCarrySolid />}
             active={isRouteActive('/permissions')} // Check if route is active
           >
-            <MenuItem
-              component={<Link href={'/permissions/adicionar-grupo'} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Adicionar grupo
-            </MenuItem>
-            <MenuItem
-              component={<Link href={'/permissions/editar-grupo'} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Editar grupo
-            </MenuItem>
-            <MenuItem
-              component={<Link href={'/permissions/excluir-grupo'} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Excluir grupo
-            </MenuItem>
-            <MenuItem
-              component={<Link href={'/permissions/listar-grupo'} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Listar grupo
-            </MenuItem>
+            <Menuitem childRoute="permissions" routes={PermissõesRoutes} />
           </SubMenu>
-          <MenuItem
-            key="calendar"
+
+          <SubMenu
+            label="Financeiro"
+            component={<Link href={'/financeiro'} />}
             icon={<LiaPeopleCarrySolid />}
-            active={isRouteActive('/calendar')}
+            active={isRouteActive('/financeiro')} // Check if route is active
           >
-            Calendar (active)
-          </MenuItem>
-          <MenuItem key="ecommerce" disabled icon={<RxDashboard />}>
-            E-commerce (disabled)
-          </MenuItem>
+            <Menuitem childRoute="financeiro" routes={FinanceiroRoutes} />
+          </SubMenu>
+
           <MenuItem
             key="examples"
             icon={<RxDashboard />}

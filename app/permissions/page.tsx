@@ -2,8 +2,7 @@ import { CheckMark } from '@/assets/svg/icons';
 import OverView from '@/components/common/overview/overviews';
 import MainNavbar from '@/components/main-navbar/main-navbar';
 import SubHeader from '@/components/sub-header';
-import { PermissõesRoutes } from '@/constant/data';
-import React from 'react';
+import { Button } from '@/components/ui/button';
 import {
   Select,
   SelectContent,
@@ -13,11 +12,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
-import { Button } from '@/components/ui/button';
+import { PermissõesRoutes } from '@/constant/data';
 import { AiOutlinePlusCircle } from 'react-icons/ai';
 const Permissions = () => {
   return (
-    <div>
+    <>
       <div className=" space-y-5 ">
         <MainNavbar title="Permissões" />
 
@@ -101,7 +100,7 @@ const Permissions = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -26,7 +26,7 @@ const SubHeader: React.FC<Props> = ({ href, name, buttonsData }) => {
         <Link href={href}>
           <MdKeyboardArrowLeft size={24} />
         </Link>
-        <h2 className=" text-5xl text-skin-gray-950 font-semibold">{name}</h2>
+        <h2 className=" text-5xl text-skin-gray-950 font-normal">{name}</h2>
       </div>
       <div className=" hidden lg:flex items-center gap-4">
         {buttonsData?.map((data, index) => (

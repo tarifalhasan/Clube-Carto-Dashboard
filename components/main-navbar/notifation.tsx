@@ -1,5 +1,4 @@
-import { BellIcon } from '@/assets/svg/icons';
-import React from 'react';
+import { BellIcon } from "@/assets/svg/icons";
 
 const Notifation = () => {
   return (

@@ -27,6 +27,7 @@ module.exports = {
           DEFAULT: 'hsl(var(--primary))',
           foreground: 'hsl(var(--primary-foreground))',
         },
+        'table-border': 'rgba(26, 147, 46, 0.18)',
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
           foreground: 'hsl(var(--secondary-foreground))',
@@ -123,6 +124,9 @@ module.exports = {
         main: '0px 4px 6px 0px rgba(0, 0, 0, 0.02)',
         '5xl': '0px 0px 6px 0px rgba(0, 0, 0, 0.10)',
         'btn-shadow': '0px 0px 4px 0px rgba(0, 0, 0, 0.15)',
+      },
+      borderRadius: {
+        14: '14px',
       },
     },
   },
