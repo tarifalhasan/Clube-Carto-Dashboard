@@ -105,7 +105,7 @@ const FuncionáriosRoutes: ButtonGroupType[] = [
   },
   {
     name: "Editar funcionário",
-    href: "editar-funcionário",
+    href: "edit-employee",
   },
   {
     name: "Bloquear funcionário",
