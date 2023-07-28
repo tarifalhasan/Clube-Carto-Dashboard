@@ -119,6 +119,7 @@ module.exports = {
       },
       dropShadow: {
         base: '0px 4px 6px 0px rgba(0, 0, 0, 0.02)',
+        '5xl':'0px 0px 6px rgba(0, 0, 0, 0.10)'
       },
       boxShadow: {
         main: '0px 4px 6px 0px rgba(0, 0, 0, 0.02)',

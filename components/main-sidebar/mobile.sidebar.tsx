@@ -1,11 +1,20 @@
-'use client';
-import React, { useState, useEffect } from 'react';
-import { useRouter, usePathname } from 'next/navigation'; // Import the useRouter hook
-import { Sidebar, Menu, MenuItem, SubMenu } from 'react-pro-sidebar';
-import Link from 'next/link';
-import { RxDashboard } from 'react-icons/rx';
-import { LiaPeopleCarrySolid } from 'react-icons/lia';
-import Logo from '@/assets/Logo';
+"use client";
+import Logo from "@/assets/Logo";
+import {
+  FinanceiroRoutes,
+  FuncionáriosRoutes,
+  PermissõesRoutes,
+  SaúdeRoutes,
+} from "@/constant/data";
+import Link from "next/link";
+import { usePathname } from "next/navigation"; // Import the useRouter hook
+import React, { useEffect, useState } from "react";
+import { HiOutlineUserGroup } from "react-icons/hi2";
+import { LiaPeopleCarrySolid } from "react-icons/lia";
+import { RiHeartAddFill } from "react-icons/ri";
+import { RxDashboard } from "react-icons/rx";
+import { Menu, MenuItem, Sidebar, SubMenu } from "react-pro-sidebar";
+import Menuitem from "./menu-item";
 
 interface SidebarProps {
   onBackdropClick?: () => void;
@@ -17,7 +26,7 @@ const MobileSidebar: React.FC<SidebarProps> = ({
   toggled,
 }) => {
   const [collapsed, setCollapsed] = useState(false);
-  const [path, setPath] = useState('/');
+  const [path, setPath] = useState("/");
   const paths = usePathname();
   useEffect(() => {
     // This effect will run only on the client-side after the component mounts
@@ -44,9 +53,9 @@ const MobileSidebar: React.FC<SidebarProps> = ({
               // only apply styles on first level elements of the tree
               if (level === 0)
                 return {
-                  color: disabled ? '#f5d9ff' : active ? '#1A932E' : '',
-                  backgroundColor: active ? '#fff' : undefined,
-                  borderRadius: '24px',
+                  color: disabled ? "#f5d9ff" : active ? "#1A932E" : "",
+                  backgroundColor: active ? "#fff" : undefined,
+                  borderRadius: "24px",
                 };
             },
           }}
@@ -54,7 +63,7 @@ const MobileSidebar: React.FC<SidebarProps> = ({
         >
           <MenuItem
             key="logo"
-            component={<Link href={'/'} />}
+            component={<Link href={"/"} />}
             className="pt-7 pb-10"
           >
             <Logo />
@@ -64,68 +73,92 @@ const MobileSidebar: React.FC<SidebarProps> = ({
             key="dashboard"
             component={<Link href="/" />}
             icon={<RxDashboard />}
-            active={isRouteActive('/')} // Check if route is active
+            active={isRouteActive("/")} // Check if route is active
           >
             Dashboard
           </MenuItem>
           <SubMenu
             // defaultOpen
             label="Associados"
-            component={<Link href={'/associados'} />}
+            component={<Link href={"/associados"} />}
             icon={<LiaPeopleCarrySolid />}
-            active={isRouteActive('/associados')} // Check if route is active
+            active={isRouteActive("/associados")} // Check if route is active
           >
             <MenuItem
-              component={<Link href={'/associados/lista'} />}
+              component={<Link href={"/associados/lista"} />}
               className=" bg-[#EEEEEE] "
             >
               Lista
             </MenuItem>
             <MenuItem
-              component={<Link href={'/associados/adiciona-rassociado'} />}
+              component={<Link href={"/associados/adiciona-rassociado"} />}
               className=" bg-[#EEEEEE] "
             >
               Adicionar associado
             </MenuItem>
             <MenuItem
-              component={<Link href={'/associados/editar-associado'} />}
+              component={<Link href={"/associados/editar-associado"} />}
               className=" bg-[#EEEEEE] "
             >
               Editar associado
             </MenuItem>
             <MenuItem
-              component={<Link href={'/associados/importar-remessa'} />}
+              component={<Link href={"/associados/importar-remessa"} />}
               className=" bg-[#EEEEEE] "
             >
               Importar Remessa
             </MenuItem>
             <MenuItem
-              component={<Link href={'/associados/exportar-remessa'} />}
+              component={<Link href={"/associados/exportar-remessa"} />}
               className=" bg-[#EEEEEE] "
             >
               Exportar Remessa
             </MenuItem>
             <MenuItem
-              component={<Link href={'/associados/grupos'} />}
+              component={<Link href={"/associados/grupos"} />}
               className=" bg-[#EEEEEE] "
             >
               Grupos
             </MenuItem>
           </SubMenu>
-          <MenuItem
-            key="calendar"
+          <SubMenu
+            label="Permissões"
+            component={<Link href={"/permissions"} />}
             icon={<LiaPeopleCarrySolid />}
-            active={isRouteActive('/calendar')}
+            active={isRouteActive("/permissions")} // Check if route is active
           >
-            Calendar (active)
-          </MenuItem>
-          <MenuItem key="ecommerce" disabled icon={<RxDashboard />}>
-            E-commerce (disabled)
-          </MenuItem>
+            <Menuitem childRoute="permissions" routes={PermissõesRoutes} />
+          </SubMenu>
+
+          <SubMenu
+            label="Financeiro"
+            component={<Link href={"/financeiro"} />}
+            icon={<LiaPeopleCarrySolid />}
+            active={isRouteActive("/financeiro")} // Check if route is active
+          >
+            <Menuitem childRoute="financeiro" routes={FinanceiroRoutes} />
+          </SubMenu>
+          <SubMenu
+            label="health"
+            component={<Link href={"/health"} />}
+            icon={<RiHeartAddFill />}
+            active={isRouteActive("/health")} // Check if route is active
+          >
+            <Menuitem childRoute="health" routes={SaúdeRoutes} />
+          </SubMenu>
+          <SubMenu
+            label="Funcionários"
+            component={<Link href={"/employees"} />}
+            icon={<HiOutlineUserGroup />}
+            active={isRouteActive("/employees")} // Check if route is active
+          >
+            <Menuitem childRoute="employees" routes={FuncionáriosRoutes} />
+          </SubMenu>
+
           <MenuItem
             key="examples"
             icon={<RxDashboard />}
-            active={isRouteActive('/examples')}
+            active={isRouteActive("/examples")}
           >
             Examples
           </MenuItem>
