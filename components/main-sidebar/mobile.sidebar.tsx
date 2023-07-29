@@ -1,14 +1,19 @@
 "use client";
 import Logo from "@/assets/Logo";
+import { TelemedicineIcon } from "@/assets/svg/icons";
 import {
+  CashbackRoutess,
   FinanceiroRoutes,
   FuncionáriosRoutes,
   PermissõesRoutes,
   SaúdeRoutes,
+  TelemedicineRoutes,
+  associadosButtonData,
 } from "@/constant/data";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // Import the useRouter hook
+import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import { BsCashStack } from "react-icons/bs";
 import { HiOutlineUserGroup } from "react-icons/hi2";
 import { LiaPeopleCarrySolid } from "react-icons/lia";
 import { RiHeartAddFill } from "react-icons/ri";
@@ -84,42 +89,15 @@ const MobileSidebar: React.FC<SidebarProps> = ({
             icon={<LiaPeopleCarrySolid />}
             active={isRouteActive("/associados")} // Check if route is active
           >
-            <MenuItem
-              component={<Link href={"/associados/lista"} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Lista
-            </MenuItem>
-            <MenuItem
-              component={<Link href={"/associados/adiciona-rassociado"} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Adicionar associado
-            </MenuItem>
-            <MenuItem
-              component={<Link href={"/associados/editar-associado"} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Editar associado
-            </MenuItem>
-            <MenuItem
-              component={<Link href={"/associados/importar-remessa"} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Importar Remessa
-            </MenuItem>
-            <MenuItem
-              component={<Link href={"/associados/exportar-remessa"} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Exportar Remessa
-            </MenuItem>
-            <MenuItem
-              component={<Link href={"/associados/grupos"} />}
-              className=" bg-[#EEEEEE] "
-            >
-              Grupos
-            </MenuItem>
+            <Menuitem childRoute="associados" routes={associadosButtonData} />
+          </SubMenu>
+          <SubMenu
+            label="Cashback"
+            component={<Link href={"/cashback"} />}
+            icon={<BsCashStack />}
+            active={isRouteActive("/cashback")} // Check if route is active
+          >
+            <Menuitem childRoute="cashback" routes={CashbackRoutess} />
           </SubMenu>
           <SubMenu
             label="Permissões"
@@ -139,7 +117,7 @@ const MobileSidebar: React.FC<SidebarProps> = ({
             <Menuitem childRoute="financeiro" routes={FinanceiroRoutes} />
           </SubMenu>
           <SubMenu
-            label="health"
+            label="Saúde"
             component={<Link href={"/health"} />}
             icon={<RiHeartAddFill />}
             active={isRouteActive("/health")} // Check if route is active
@@ -153,6 +131,15 @@ const MobileSidebar: React.FC<SidebarProps> = ({
             active={isRouteActive("/employees")} // Check if route is active
           >
             <Menuitem childRoute="employees" routes={FuncionáriosRoutes} />
+          </SubMenu>
+
+          <SubMenu
+            label="Telemedicina"
+            component={<Link href={"/telemedicine"} />}
+            icon={<TelemedicineIcon />}
+            active={isRouteActive("/telemedicine")} // Check if route is active
+          >
+            <Menuitem childRoute="telemedicine" routes={TelemedicineRoutes} />
           </SubMenu>
 
           <MenuItem

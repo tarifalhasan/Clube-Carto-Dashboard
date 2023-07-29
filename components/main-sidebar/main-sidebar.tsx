@@ -108,7 +108,7 @@ const MainSidebar: React.FC<SidebarProps> = ({
             <Menuitem childRoute="financeiro" routes={FinanceiroRoutes} />
           </SubMenu>
           <SubMenu
-            label="health"
+            label="Saúde"
             component={<Link href={"/health"} />}
             icon={<RiHeartAddFill />}
             active={isRouteActive("/health")} // Check if route is active
