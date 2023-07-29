@@ -1,12 +1,13 @@
 "use client";
 import Logo from "@/assets/Logo";
-import { ArrowRigh } from "@/assets/svg/icons";
+import { ArrowRigh, TelemedicineIcon } from "@/assets/svg/icons";
 import {
   CashbackRoutess,
   FinanceiroRoutes,
   FuncionáriosRoutes,
   PermissõesRoutes,
   SaúdeRoutes,
+  TelemedicineRoutes,
   associadosButtonData,
 } from "@/constant/data";
 import Link from "next/link";
@@ -121,6 +122,15 @@ const MainSidebar: React.FC<SidebarProps> = ({
             active={isRouteActive("/employees")} // Check if route is active
           >
             <Menuitem childRoute="employees" routes={FuncionáriosRoutes} />
+          </SubMenu>
+
+          <SubMenu
+            label="Telemedicina"
+            component={<Link href={"/telemedicine"} />}
+            icon={<TelemedicineIcon />}
+            active={isRouteActive("/telemedicine")} // Check if route is active
+          >
+            <Menuitem childRoute="telemedicine" routes={TelemedicineRoutes} />
           </SubMenu>
 
           <MenuItem

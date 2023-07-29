@@ -165,6 +165,24 @@ const CashbackRoutess: ButtonGroupType[] = [
     href: "my-earnings",
   },
 ];
+const TelemedicineRoutes: ButtonGroupType[] = [
+  {
+    name: "List Specialties",
+    href: "list-specialties",
+  },
+  {
+    name: "Planos Ativos",
+    href: "active-plans",
+  },
+  {
+    name: "Chamados recentes",
+    href: "recent-calls",
+  },
+  {
+    name: "Gerar link consulta",
+    href: "generate-query-link",
+  },
+];
 const ImportarRemessaList: AccociadorListType[] = [
   {
     name: "Nome do associado",
@@ -324,6 +342,7 @@ const ListOfEstablishmentsData: EstablishType[] = [
     id: "6",
   },
 ];
+
 export {
   AssoociadorList,
   CashbackRoutess,
@@ -334,6 +353,7 @@ export {
   ListOfEstablishmentsData,
   PermissõesRoutes,
   SaúdeRoutes,
+  TelemedicineRoutes,
   associadosButtonData,
   dummyDataForTable,
   pacienteLists,

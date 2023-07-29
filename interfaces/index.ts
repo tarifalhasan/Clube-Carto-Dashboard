@@ -27,7 +27,7 @@ export interface pacientenType {
   id: string;
 }
 
-export interface Establish {
+export interface EstablishType {
   name: string;
   id: string;
   image?: string;

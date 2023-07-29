@@ -1,7 +1,6 @@
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
@@ -12,7 +11,6 @@ const GroupsData = () => {
   return (
     <div>
       <Table>
-        <TableCaption>A list of Groups.</TableCaption>
         <TableHeader className="s bg-[#1A932E2E] ">
           <TableRow>
             <TableHead className=" text-xs sm:text-base font-normal">

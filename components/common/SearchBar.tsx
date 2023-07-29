@@ -2,13 +2,14 @@ import React, { InputHTMLAttributes } from "react";
 
 interface Props {
   label: string;
+  className?: string;
 }
 
 const SearchBar: React.FC<
   Props & Omit<InputHTMLAttributes<HTMLInputElement>, "label">
-> = ({ label, ...props }) => {
+> = ({ label, className, ...props }) => {
   return (
-    <div>
+    <div className={className}>
       <h3 className=" py-2 text-lg sm:text-xl font-semibold  text-text-green">
         {label}
       </h3>
