@@ -26,3 +26,9 @@ export interface pacientenType {
   location: string;
   id: string;
 }
+
+export interface Establish {
+  name: string;
+  id: string;
+  image?: string;
+}

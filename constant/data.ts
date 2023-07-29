@@ -3,6 +3,7 @@ import {
   ButtonGroupType,
   ClínicasType,
   DataTableType,
+  EstablishType,
   pacientenType,
 } from "@/interfaces";
 
@@ -146,6 +147,24 @@ const AssoociadorList: AccociadorListType[] = [
     id: "6",
   },
 ];
+const CashbackRoutess: ButtonGroupType[] = [
+  {
+    name: "Categorias",
+    href: "categories",
+  },
+  {
+    name: "Adicionar estabelecimento",
+    href: "add-establishment",
+  },
+  {
+    name: "Lista",
+    href: "list",
+  },
+  {
+    name: "Meus Ganhos",
+    href: "my-earnings",
+  },
+];
 const ImportarRemessaList: AccociadorListType[] = [
   {
     name: "Nome do associado",
@@ -279,12 +298,40 @@ const dummyDataForTable: DataTableType[] = [
   },
 ];
 
+const ListOfEstablishmentsData: EstablishType[] = [
+  {
+    name: "Hospital Vitória",
+    id: "1",
+  },
+  {
+    name: "Hospital Vitória",
+    id: "2",
+  },
+  {
+    name: "Hospital Vitória",
+    id: "3",
+  },
+  {
+    name: "Hospital Vitória",
+    id: "4",
+  },
+  {
+    name: "Hospital Vitória",
+    id: "5",
+  },
+  {
+    name: "Hospital Vitória",
+    id: "6",
+  },
+];
 export {
   AssoociadorList,
+  CashbackRoutess,
   ClínicasDummyList,
   FinanceiroRoutes,
   FuncionáriosRoutes,
   ImportarRemessaList,
+  ListOfEstablishmentsData,
   PermissõesRoutes,
   SaúdeRoutes,
   associadosButtonData,
