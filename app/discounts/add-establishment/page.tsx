@@ -1,5 +1,4 @@
 "use client";
-import OverView from "@/components/common/overview/overviews";
 import MainNavbar from "@/components/main-navbar/main-navbar";
 import SubHeader from "@/components/sub-header";
 import { Button } from "@/components/ui/button";
@@ -19,7 +18,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { CashbackRoutess } from "@/constant/data";
+import { DescontosRoutes } from "@/constant/data";
 import { zodResolver } from "@hookform/resolvers/zod";
 import dynamic from "next/dynamic";
 import { useForm } from "react-hook-form";
@@ -73,15 +72,12 @@ const CashBack = () => {
   return (
     <>
       <div className=" space-y-5  pb-6">
-        <MainNavbar title="Cashback" />
-        <div className="  space-y-5">
-          <OverView />
-          <SubHeader
-            href="cashback"
-            buttonsData={CashbackRoutess}
-            name="Categorias"
-          />
-        </div>
+        <MainNavbar title="Descontos" />
+        <SubHeader
+          href="discounts"
+          buttonsData={DescontosRoutes.Categorias}
+          name="Adicionar estabelecimento"
+        />
         <div className=" space-y-4 rounded-14  bg-white shadow-btn-shadow p-2 sm:p-5">
           <h3 className=" text-xl font-semibold">Cadastrar estabelecimento</h3>
           <Form {...form}>
@@ -115,16 +111,19 @@ const CashBack = () => {
                             defaultValue={field.value}
                           >
                             <SelectTrigger>
-                              <SelectValue placeholder="Categoria" />
+                              <SelectValue>Categoria</SelectValue>
+                              <SelectContent>
+                                <SelectItem value="">
+                                  Selecione uma categoria
+                                </SelectItem>
+                                <SelectItem value="Categoria 1">
+                                  Categoria 1
+                                </SelectItem>
+                                <SelectItem value="Categoria 2">
+                                  Categoria 2
+                                </SelectItem>
+                              </SelectContent>
                             </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value="Categoria 1">
-                                Categoria 1
-                              </SelectItem>
-                              <SelectItem value="Categoria 2">
-                                Categoria 2
-                              </SelectItem>
-                            </SelectContent>
                           </Select>
                         </FormControl>
                         <FormMessage />
@@ -277,16 +276,19 @@ const CashBack = () => {
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="Categoria" />
+                            <SelectValue>Categoria</SelectValue>
+                            <SelectContent>
+                              <SelectItem value="">
+                                Selecione uma categoria
+                              </SelectItem>
+                              <SelectItem value="Categoria 1">
+                                Categoria 1
+                              </SelectItem>
+                              <SelectItem value="Categoria 2">
+                                Categoria 2
+                              </SelectItem>
+                            </SelectContent>
                           </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="Categoria 1">
-                              Categoria 1
-                            </SelectItem>
-                            <SelectItem value="Categoria 2">
-                              Categoria 2
-                            </SelectItem>
-                          </SelectContent>
                         </Select>
                       </FormControl>
                       <FormMessage />
@@ -306,12 +308,12 @@ const CashBack = () => {
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="é loja virtual?" />
+                            <SelectValue>é loja virtual?</SelectValue>
+                            <SelectContent>
+                              <SelectItem value="yes">Yes</SelectItem>
+                              <SelectItem value="no">No</SelectItem>
+                            </SelectContent>
                           </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="yes">Yes</SelectItem>
-                            <SelectItem value="no">No</SelectItem>
-                          </SelectContent>
                         </Select>
                       </FormControl>
                       <FormMessage />
@@ -329,12 +331,12 @@ const CashBack = () => {
                           defaultValue={field.value}
                         >
                           <SelectTrigger>
-                            <SelectValue placeholder="exclusive_partner" />
+                            <SelectValue>exclusive_partner</SelectValue>
+                            <SelectContent>
+                              <SelectItem value="yes">Yes</SelectItem>
+                              <SelectItem value="no">No</SelectItem>
+                            </SelectContent>
                           </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="yes">Yes</SelectItem>
-                            <SelectItem value="no">No</SelectItem>
-                          </SelectContent>
                         </Select>
                       </FormControl>
                       <FormMessage />

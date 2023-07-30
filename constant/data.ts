@@ -10,29 +10,70 @@ import {
 const associadosButtonData: ButtonGroupType[] = [
   {
     name: "Lista",
-    href: "/associados/lista",
+    href: "lista",
   },
   {
     name: "Adicionar associado",
-    href: "/associados/adicionar_associado",
+    href: "adiciona-rassociado",
   },
   {
     name: "Editar associado",
-    href: "/associados/editar_associado",
+    href: "editar-associado",
   },
   {
     name: "Importar Remessa",
-    href: "/associados/importar_remessa",
+    href: "importar-remessa",
   },
   {
     name: "Exportar Remessa",
-    href: "/associados/exportar_remessa",
+    href: "exportar-remessa",
   },
   {
     name: "Importar Remessa",
-    href: "/associados/grupos",
+    href: "grupos",
   },
 ];
+
+interface sidebarType {
+  path: string;
+  Categorias: ButtonGroupType[];
+  Estabelecimento: ButtonGroupType[];
+}
+const DescontosRoutes: sidebarType = {
+  path: "discounts",
+  Categorias: [
+    {
+      name: "Adicionar Categorias ",
+      href: "add-categories",
+    },
+    {
+      name: " Listar Categorias",
+      href: "list-categories",
+    },
+  ],
+  Estabelecimento: [
+    {
+      name: " Adicionar estabelecimento ",
+      href: "add-establishment",
+    },
+    {
+      name: "Bloquear ",
+      href: "block",
+    },
+    {
+      name: "Recentes ",
+      href: "Recent",
+    },
+    {
+      name: " Mais utilizados ",
+      href: "most-used",
+    },
+    {
+      name: "Destaque scroll ",
+      href: "highlight-scroll",
+    },
+  ],
+};
 
 const PermissõesRoutes: ButtonGroupType[] = [
   {
@@ -347,6 +388,7 @@ export {
   AssoociadorList,
   CashbackRoutess,
   ClínicasDummyList,
+  DescontosRoutes,
   FinanceiroRoutes,
   FuncionáriosRoutes,
   ImportarRemessaList,

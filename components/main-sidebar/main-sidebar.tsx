@@ -1,14 +1,14 @@
 "use client";
 import Logo from "@/assets/Logo";
-import { ArrowRigh, TelemedicineIcon } from "@/assets/svg/icons";
+import { ArrowRigh, DiscountsSVG, TelemedicineIcon } from "@/assets/svg/icons";
 import {
   CashbackRoutess,
+  DescontosRoutes,
   FinanceiroRoutes,
   FuncionáriosRoutes,
   PermissõesRoutes,
   SaúdeRoutes,
   TelemedicineRoutes,
-  associadosButtonData,
 } from "@/constant/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // Import the useRouter hook
@@ -79,8 +79,28 @@ const MainSidebar: React.FC<SidebarProps> = ({
             component={<Link href={"/associados"} />}
             icon={<LiaPeopleCarrySolid />}
             active={isRouteActive("/associados")} // Check if route is active
+          />
+          <SubMenu
+            label="Descontos"
+            component={<Link href={"/discounts"} />}
+            icon={<DiscountsSVG />}
+            active={isRouteActive("/discounts")} // Check if route is active
           >
-            <Menuitem childRoute="associados" routes={associadosButtonData} />
+            <SubMenu className=" !bg-[#E5E6E6] !font-medium" label="Categorias">
+              <Menuitem
+                childRoute="discounts"
+                routes={DescontosRoutes.Categorias}
+              />
+            </SubMenu>
+            <SubMenu
+              className=" !bg-[#E5E6E6] !font-medium"
+              label="Estabelecimento"
+            >
+              <Menuitem
+                childRoute="discounts"
+                routes={DescontosRoutes.Estabelecimento}
+              />
+            </SubMenu>
           </SubMenu>
           <SubMenu
             label="Cashback"
