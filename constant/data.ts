@@ -47,10 +47,6 @@ const DescontosRoutes: sidebarType = {
       href: "categories",
     },
     {
-      name: "Adicionar Categorias ",
-      href: "add-categories",
-    },
-    {
       name: "Adicionar Categoria",
       href: "add-category",
     },
@@ -92,10 +88,6 @@ const DescontosRoutes: sidebarType = {
     {
       name: " Mais utilizados ",
       href: "most-used",
-    },
-    {
-      name: "Destaque scroll ",
-      href: "highlight-scroll",
     },
   ],
 };
