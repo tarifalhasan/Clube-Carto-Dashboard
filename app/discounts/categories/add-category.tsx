@@ -1,5 +1,6 @@
 import { DocumentIconSvg } from "@/assets/svg/icons";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { MdSave } from "react-icons/md";
 
 const AddCategories = () => {
@@ -12,10 +13,13 @@ const AddCategories = () => {
         <h3 className=" text-xl font-normal">
           Adicionar <br /> Categorias
         </h3>
-        <Button variant={"secondary"}>
-          <MdSave size={20} className="text-white" />{" "}
-          <span className=" text-white">Adicionar</span>
-        </Button>
+
+        <Link href={"add-category"}>
+          <Button variant={"secondary"}>
+            <MdSave size={20} className="text-white" />{" "}
+            <span className=" text-white">Adicionar</span>
+          </Button>
+        </Link>
       </div>
     </div>
   );

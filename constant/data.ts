@@ -43,8 +43,16 @@ const DescontosRoutes: sidebarType = {
   path: "discounts",
   Categorias: [
     {
+      name: "Categorias",
+      href: "categories",
+    },
+    {
       name: "Adicionar Categorias ",
       href: "add-categories",
+    },
+    {
+      name: "Adicionar Categoria",
+      href: "add-category",
     },
     {
       name: " Listar Categorias",
@@ -53,8 +61,25 @@ const DescontosRoutes: sidebarType = {
   ],
   Estabelecimento: [
     {
+      name: "Estabelecimento",
+      href: "establishment",
+    },
+    {
       name: " Adicionar estabelecimento ",
       href: "add-establishment",
+    },
+    {
+      name: "Cadastrar Descontos ",
+      href: "register-discounts",
+    },
+
+    {
+      name: "Detaque Scroll",
+      href: "detaque-scroll",
+    },
+    {
+      name: "Listar estabelecimento",
+      href: "list-establishment",
     },
     {
       name: "Bloquear ",
@@ -74,7 +99,16 @@ const DescontosRoutes: sidebarType = {
     },
   ],
 };
-
+const DescontosSub: ButtonGroupType[] = [
+  {
+    name: "Categorias",
+    href: "discounts",
+  },
+  {
+    name: "Estabelecimento",
+    href: "discounts",
+  },
+];
 const PermissõesRoutes: ButtonGroupType[] = [
   {
     name: "Adicionar grupo",
@@ -389,6 +423,7 @@ export {
   CashbackRoutess,
   ClínicasDummyList,
   DescontosRoutes,
+  DescontosSub,
   FinanceiroRoutes,
   FuncionáriosRoutes,
   ImportarRemessaList,

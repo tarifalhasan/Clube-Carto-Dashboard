@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 const ListCategories = () => {
   return (
-    <div className="s shadow-5xl bg-white p-4 rounded-2xl">
+    <div className="s  shadow-5xl group  bg-white p-4 rounded-2xl">
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -23,16 +25,20 @@ const ListCategories = () => {
           />
         </svg>
       </div>
-      <div className="flex space-y-3 items-center justify-between">
-        <h3 className=" text-xl font-normal">
+      <Link
+        href={"list-categories"}
+        className="flex space-y-3     items-center justify-between"
+      >
+        <span className=" text-xl font-normal">
           Listar <br /> Categorias
-        </h3>
+        </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width={8}
           height={16}
           viewBox="0 0 8 16"
           fill="none"
+          className="group-hover:stoke-white"
         >
           <path
             fillRule="evenodd"
@@ -41,7 +47,7 @@ const ListCategories = () => {
             fill="black"
           />
         </svg>
-      </div>
+      </Link>
     </div>
   );
 };
