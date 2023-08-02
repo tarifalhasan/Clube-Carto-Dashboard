@@ -62,6 +62,10 @@ module.exports = {
           'navbar-boder': 'rgba(0, 0, 0, 0.08)',
           red: '#EE201C',
         },
+        'card-border':"rgba(26, 147, 46, 0.18)",
+        'dark-shade-of-blue':"#003178",
+        "border-green-light":"rgba(116, 238, 174, 0.70)",
+        "border-green-dark":"rgba(86, 154, 89, 0.50)",
       },
       borderRadius: {
         lg: 'var(--radius)',

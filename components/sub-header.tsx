@@ -1,19 +1,20 @@
-'use client';
-import { Button } from '@/components/ui/button';
-import { ButtonGroupType } from '@/interfaces';
-import Link from 'next/link';
-import React from 'react';
-import { MdKeyboardArrowLeft } from 'react-icons/md';
-import { useRouter } from 'next/navigation';
-import { IoIosArrowForward } from 'react-icons/io';
+"use client";
+import { Button } from "@/components/ui/button";
+import { ButtonGroupType } from "@/interfaces";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import React from "react";
+import { IoIosArrowForward } from "react-icons/io";
+import { MdKeyboardArrowLeft } from "react-icons/md";
 
 interface Props {
   href: string;
-  name: string;
+  name?: string;
   buttonsData?: ButtonGroupType[];
+  title?: string;
 }
 
-const SubHeader: React.FC<Props> = ({ href, name, buttonsData }) => {
+const SubHeader: React.FC<Props> = ({ href, name, buttonsData, title }) => {
   const router = useRouter();
 
   const handleClickLink = (path: string) => {
@@ -26,14 +27,16 @@ const SubHeader: React.FC<Props> = ({ href, name, buttonsData }) => {
         <Link href={href}>
           <MdKeyboardArrowLeft size={24} />
         </Link>
-        <h2 className=" text-5xl text-skin-gray-950 font-normal">{name}</h2>
+        <h2 className=" text-5xl text-skin-gray-950 font-normal">
+          {name || title}
+        </h2>
       </div>
       <div className=" hidden lg:flex items-center gap-4">
         {buttonsData?.map((data, index) => (
           <Button
             onClick={() => handleClickLink(data.href)}
             key={index}
-            variant={'primary'}
+            variant={"primary"}
           >
             <span>{data.name}</span>
             <IoIosArrowForward />

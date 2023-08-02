@@ -8,7 +8,9 @@ import {
   PeopleIconSVG,
   PermissõesIconSvg,
   TelemedicineIcon,
+  TicketIconSvg,
 } from "@/assets/svg/icons";
+import { cinema_routes } from "@/constant/cinema";
 import {
   CashbackRoutess,
   DescontosRoutes,
@@ -150,6 +152,14 @@ const CustomMenus = () => {
         active={isRouteActive("/telemedicine")} // Check if route is active
       >
         <Menuitem childRoute="telemedicine" routes={TelemedicineRoutes} />
+      </SubMenu>
+      <SubMenu
+        label="Cinema"
+        component={<Link href={"/cinema"} />}
+        icon={<TicketIconSvg />}
+        active={isRouteActive("/cinema")} // Check if route is active
+      >
+        <Menuitem childRoute="cinema" routes={cinema_routes} />
       </SubMenu>
 
       <MenuItem

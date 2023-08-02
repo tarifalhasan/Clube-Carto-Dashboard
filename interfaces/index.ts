@@ -3,6 +3,10 @@ export interface ButtonGroupType {
   href: string;
 }
 
+export interface sidebarNavigationType {
+  name: string;
+  href: string;
+}
 export interface AccociadorListType {
   name: string;
   id: string;

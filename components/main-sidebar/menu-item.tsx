@@ -1,7 +1,7 @@
-import { ButtonGroupType } from '@/interfaces';
-import Link from 'next/link';
-import React from 'react';
-import { MenuItem } from 'react-pro-sidebar';
+import { ButtonGroupType } from "@/interfaces";
+import Link from "next/link";
+import React from "react";
+import { MenuItem } from "react-pro-sidebar";
 
 // Define the interface for the component props
 interface Props {
