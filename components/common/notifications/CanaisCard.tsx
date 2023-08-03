@@ -1,12 +1,30 @@
+"use client";
+
 import React from "react";
 import ForwardToInboxIcon from "@mui/icons-material/ForwardToInbox";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
 import MarkChatUnreadOutlinedIcon from "@mui/icons-material/MarkChatUnreadOutlined";
+import { useRouter } from "next/navigation";
 
 function CanaisCard({ name }: { name: string }) {
+  const router = useRouter();
+
+  const handleEmailClick = () => {
+    name === "Email"
+      ? router.push("/notifications/email")
+      : name === "Push"
+      ? router.push("/notifications/push")
+      : name === "SMS"
+      ? router.push("/notifications/sms")
+      : router.push("/notifications/chat");
+  };
+
   return (
-    <div className="p-3 w-[200px] h-auto border border-gray-300 rounded-lg hover:bg-red-50 cursor-pointer">
+    <div
+      className="p-3 w-[200px] h-auto border border-gray-300 rounded-lg hover:bg-red-50 cursor-pointer"
+      onClick={handleEmailClick}
+    >
       <div
         className={
           name === "Email"
