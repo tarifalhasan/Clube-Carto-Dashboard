@@ -1,7 +1,7 @@
+import CanaisCard from "@/components/common/notifications/CanaisCard";
 import Card from "@/components/common/notifications/Card";
 import SingleButton from "@/components/common/notifications/SingleButton";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Notifications = () => {
   return (
@@ -10,7 +10,7 @@ const Notifications = () => {
         <p className="font-semibold my-3">Visão geral</p>
         <p className="my-3 text-sm">Últimos 30 dias</p>
       </div>
-      <div className="flex gap-5">
+      <div className="flex gap-3">
         <Card
           name="Receita Total"
           amount="R$153.009,89"
@@ -36,7 +36,7 @@ const Notifications = () => {
       {/* notifications  start */}
 
       <div className="py-5 flex justify-between">
-        <div className="w-[30%] flex items-center">
+        <div className="w-[30%] flex items-center hover:text-blue-500 cursor-pointer">
           <ArrowBackIosIcon fontSize="small" />
           <p className="font-semibold text-xl">Notificações</p>
         </div>
@@ -48,6 +48,22 @@ const Notifications = () => {
         </div>
       </div>
       {/* notifications  end */}
+
+      {/* canis start  */}
+      <div className="my-8">
+        <h1 className="font-semibold">Canais</h1>
+        <p className="text-sm text-gray-600">
+          Escolha um canal e crie suas notificações
+        </p>
+
+        <div className="py-3 flex gap-5">
+          <CanaisCard name="Email" />
+          <CanaisCard name="Push" />
+          <CanaisCard name="SMS" />
+          <CanaisCard name="Chat" />
+        </div>
+      </div>
+      {/* canis end  */}
     </div>
   );
 };
