@@ -66,6 +66,8 @@ module.exports = {
         'dark-shade-of-blue':"#003178",
         "border-green-light":"rgba(116, 238, 174, 0.70)",
         "border-green-dark":"rgba(86, 154, 89, 0.50)",
+        'table-row-dark':"#353A40",
+        "green-light":"#74EEAE"
       },
       borderRadius: {
         lg: 'var(--radius)',

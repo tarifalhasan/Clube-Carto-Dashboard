@@ -7,7 +7,7 @@ export default function DashboardLayout({
 }) {
   return (
     <section className=" relative h-full  space-y-5">
-      <MainNavbar title="Cinema" />
+      <MainNavbar title="Notificações" />
       {children}
     </section>
   );

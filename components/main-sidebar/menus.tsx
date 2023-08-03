@@ -25,6 +25,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { BsCashStack } from "react-icons/bs";
+import { MdNotificationsActive } from "react-icons/md";
 import { RxDashboard } from "react-icons/rx";
 import { Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import Menuitem from "./menu-item";
@@ -81,6 +82,12 @@ const CustomMenus = () => {
       >
         <Menuitem childRoute="associados" routes={associadosButtonData} />
       </SubMenu>
+      <SubMenu
+        label="Notificações"
+        component={<Link href={"/notifications"} />}
+        active={isRouteActive("/notifications")}
+        icon={<MdNotificationsActive />}
+      ></SubMenu>
       <SubMenu
         label="Descontos"
         component={<Link href={"/discounts"} />}
