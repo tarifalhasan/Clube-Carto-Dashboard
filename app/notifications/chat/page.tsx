@@ -5,7 +5,7 @@ function Chat() {
   return (
     <div>
       {/* notifications  start */}
-      <StartNav />
+      <StartNav name="Chat" />
       {/* notifications  end */}
     </div>
   );

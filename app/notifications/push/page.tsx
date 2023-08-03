@@ -5,7 +5,7 @@ function Push() {
   return (
     <div>
       {/* notifications  start */}
-      <StartNav />
+      <StartNav name="Push" />
       {/* notifications  end */}
     </div>
   );
