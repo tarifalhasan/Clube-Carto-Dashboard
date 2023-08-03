@@ -5,7 +5,7 @@ import React from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import SingleButton from "@/components/common/notifications/SingleButton";
 
-function StartNav() {
+function StartNav({ name }: { name: string }) {
   const router = useRouter();
 
   const handleRoute = () => {
@@ -18,7 +18,7 @@ function StartNav() {
         onClick={handleRoute}
       >
         <ArrowBackIosIcon fontSize="small" />
-        <p className="font-semibold text-xl">SMS</p>
+        <p className="font-semibold text-xl">{name}</p>
       </div>
       <div className="w-[85%] flex text-sm gap-2">
         <SingleButton name="Email" />

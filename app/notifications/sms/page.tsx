@@ -6,7 +6,7 @@ function SMS() {
   return (
     <div>
       {/* notifications  start */}
-      <StartNav />
+      <StartNav name="SMS" />
       {/* notifications  end */}
     </div>
   );

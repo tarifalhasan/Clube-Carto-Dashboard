@@ -5,7 +5,7 @@ function Email() {
   return (
     <div>
       {/* notifications  start */}
-      <StartNav />
+      <StartNav name="Email" />
       {/* notifications  end */}
     </div>
   );
