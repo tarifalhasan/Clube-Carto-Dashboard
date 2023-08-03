@@ -47,6 +47,7 @@ const Notifications = () => {
           <SingleButton name="Chat" />
         </div>
       </div>
+
       {/* notifications  end */}
 
       {/* canis start  */}
