@@ -6,7 +6,7 @@ import MarkChatUnreadOutlinedIcon from "@mui/icons-material/MarkChatUnreadOutlin
 
 function CanaisCard({ name }: { name: string }) {
   return (
-    <div className="p-3 w-[200px] h-auto border border-gray-300 rounded-lg hover:bg-blue-100 cursor-pointer">
+    <div className="p-3 w-[200px] h-auto border border-gray-300 rounded-lg hover:bg-red-50 cursor-pointer">
       <div
         className={
           name === "Email"
