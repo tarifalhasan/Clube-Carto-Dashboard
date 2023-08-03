@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import StartNav from "@/components/common/notifications/StartNav";
 import BtnBox from "@/components/common/notifications/BtnBox";
-import ReactQuill from "react-quill";
+// import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
+import dynamic from "next/dynamic";
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
 const btnState = [
   {
@@ -101,7 +103,7 @@ function Email() {
               theme="snow"
               value={value}
               onChange={setValue}
-              modules={{ toolbar: toolbarOptions }}
+              modules={{ toolbar: toolbarOptions, font: false }}
               style={editorContainerStyle}
             />
           </div>
