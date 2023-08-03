@@ -41,7 +41,7 @@ const Notifications = () => {
           <p className="font-semibold text-xl">Notificações</p>
         </div>
         <div className="w-[70%] flex text-sm gap-2">
-          <SingleButton name="Name" />
+          <SingleButton name="Email" />
           <SingleButton name="Push" />
           <SingleButton name="SMS" />
           <SingleButton name="Chat" />
