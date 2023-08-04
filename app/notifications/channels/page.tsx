@@ -117,7 +117,17 @@ function Email() {
   };
   return (
     <div>
-      <StartNav name="Email" />
+      <StartNav
+        name={
+          active === 1
+            ? "Email"
+            : active === 2
+            ? "Push"
+            : active === 3
+            ? "SMS"
+            : "Chat"
+        }
+      />
 
       <h2 className="text-lg">
         Crie uma notificação de email personalizada para o seu público
