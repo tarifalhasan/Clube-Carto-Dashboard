@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import imgEnviado from "@/assets/images/enviado.svg";
 import phone1 from "@/assets/images/phone/phone1.svg";
 import phone2 from "@/assets/images/phone/phone2.png";
+import phone3 from "@/assets/images/phone/phone3.png";
 import StartNav from "@/components/common/notifications/StartNav";
 import BtnBox from "@/components/common/notifications/BtnBox";
 // import ReactQuill from "react-quill";
@@ -127,7 +128,7 @@ function Email() {
             {displayBtns}
           </div>
         </div>
-        {/* rich text editor  */}
+        {/* Email page start active === 1  */}
         {active === 1 ? (
           <div className="w-full  border rounded-md p-3">
             <div className=" mb-2 flex justify-between gap-4 font-semibold">
@@ -521,25 +522,112 @@ function Email() {
                 </p>
               </div>
               <p
-                className={
-                  smsBtn === 4
-                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
-                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
-                }
+                className="cursor-pointer py-1 px-4 border border-gray-300 rounded-lg bg-green-400 select-none"
                 onClick={() => handleSMSbtn(4)}
               >
-                Próximo
+                Enviado!
               </p>
             </div>
 
             {smsBtn === 1 ? (
-              <div>Design</div>
-            ) : smsBtn === 2 ? (
-              <div>Prévia</div>
-            ) : smsBtn === 3 ? (
-              <div>Enviar</div>
+              // Design start
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between gap-5">
+                <div className="mt-24 w-[60%] flex flex-col gap-6">
+                  <TextField
+                    sx={{ width: "70%" }}
+                    size="small"
+                    variant="outlined"
+                    label="Título (até 20 caracteres)"
+                    value=" "
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    label="Subtítulo (até 35 caracteres)"
+                    value=" "
+                  />
+                </div>
+                <div>
+                  <Image src={phone3} alt="phone3" height={200} width={200} />
+                </div>
+              </div>
+            ) : // Design end
+            smsBtn === 2 ? (
+              // previa start
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between gap-5">
+                <div className="mt-24 w-[60%] flex flex-col gap-6">
+                  <TextField
+                    sx={{ width: "70%" }}
+                    size="small"
+                    variant="outlined"
+                    label="Título (até 20 caracteres)"
+                    value="Pra adoçar seu dia...😍"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    label="Subtítulo (até 35 caracteres)"
+                    value="Um desconto pro açaí. Vem pro app! ✅"
+                  />
+                </div>
+                <div>
+                  <Image src={phone1} alt="phone1" height={200} width={200} />
+                </div>
+              </div>
+            ) : // previa end
+            smsBtn === 3 ? (
+              <div className="py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5 mt-3">
+                <div className="w-[60%] flex justify-start">
+                  <TextField
+                    fullWidth
+                    size="small"
+                    id="outlined-basic"
+                    label="Email"
+                    variant="outlined"
+                    value="digite os emails e separe por vírgula"
+                  />
+                </div>
+                <div className="w-[60%] flex justify-start">
+                  <FormControl fullWidth size="small">
+                    <InputLabel id="demo-simple-select-label">
+                      Selecionar público
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={age}
+                      label="Selecionar público"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={10}>público 1</MenuItem>
+                      <MenuItem value={20}>público 2</MenuItem>
+                      <MenuItem value={30}>público 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+                <div className="w-[60%] flex justify-start items-center">
+                  <div className="w-full rounded-md flex items-center">
+                    <Input
+                      type="file"
+                      className="absolute top-0 left-0 w-full h-full opacity-50 cursor-pointer"
+                      onChange={handleFileChange}
+                    />
+                  </div>
+                  <span className="ml-2">.csv/.pdf</span>
+                </div>
+              </div>
             ) : (
-              <div>Próximo</div>
+              <div className="py-8 p-5 border border-gray-300 rounded-md flex flex-col items-center gap-5">
+                <Image
+                  src={imgEnviado}
+                  alt="email sent"
+                  height={220}
+                  width={250}
+                />
+                <p>Sua mensagem foi enviada com sucesso!</p>
+              </div>
             )}
           </div>
         ) : (
