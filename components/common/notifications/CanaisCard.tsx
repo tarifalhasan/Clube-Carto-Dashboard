@@ -1,17 +1,21 @@
 "use client";
 
-import React from "react";
 import ForwardToInboxIcon from "@mui/icons-material/ForwardToInbox";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
 import MarkChatUnreadOutlinedIcon from "@mui/icons-material/MarkChatUnreadOutlined";
 import { useRouter } from "next/navigation";
+import React, { useContext } from "react";
+import { GlobalStates } from "@/app/context";
 
 function CanaisCard({ name }: { name: string }) {
+  const { updateChannel } = useContext(GlobalStates);
+
   const router = useRouter();
 
   const handleClick = () => {
     router.push("/notifications/channels");
+    updateChannel(name);
   };
 
   return (

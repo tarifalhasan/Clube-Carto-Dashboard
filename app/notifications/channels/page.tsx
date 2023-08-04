@@ -1,13 +1,14 @@
 "use client";
 
 import React, { useState } from "react";
+import { useContext } from "react";
+import { GlobalStates } from "@/app/context";
 import imgEnviado from "@/assets/images/enviado.svg";
 import phone1 from "@/assets/images/phone/phone1.svg";
 import phone2 from "@/assets/images/phone/phone2.png";
 import phone3 from "@/assets/images/phone/phone3.png";
 import StartNav from "@/components/common/notifications/StartNav";
 import BtnBox from "@/components/common/notifications/BtnBox";
-// import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
 import {
@@ -20,29 +21,6 @@ import {
 } from "@mui/material";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import Image from "next/image";
-
-const btnState = [
-  {
-    id: 1,
-    name: "Email",
-    active: true,
-  },
-  {
-    id: 2,
-    name: "Push",
-    active: false,
-  },
-  {
-    id: 3,
-    name: "SMS",
-    active: false,
-  },
-  {
-    id: 4,
-    name: "Chat",
-    active: false,
-  },
-];
 
 const toolbarOptions = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }], // Header options
@@ -59,8 +37,33 @@ const editorContainerStyle = {
 };
 
 function Email() {
-  const [active, setActive] = useState(1);
-  const [btnGrp, setBtnGrp] = useState(btnState);
+  const { channel } = useContext(GlobalStates);
+
+  const [active, setActive] = useState(
+    channel === "Email" ? 1 : channel === "Push" ? 2 : channel === "SMS" ? 3 : 4
+  );
+  const [btnGrp, setBtnGrp] = useState([
+    {
+      id: 1,
+      name: "Email",
+      active: channel === "Email" ? true : false,
+    },
+    {
+      id: 2,
+      name: "Push",
+      active: channel === "Push" ? true : false,
+    },
+    {
+      id: 3,
+      name: "SMS",
+      active: channel === "SMS" ? true : false,
+    },
+    {
+      id: 4,
+      name: "Chat",
+      active: channel === "Chat" ? true : false,
+    },
+  ]);
   const [value, setValue] = useState("");
   const [emailBtn, setEmailBtn] = useState(1);
   const [pushBtn, setPushBtn] = useState(1);
