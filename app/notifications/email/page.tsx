@@ -280,11 +280,7 @@ function Email() {
                 Enviar
               </p>
               <p
-                className={
-                  pushBtn === 6
-                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
-                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
-                }
+                className="cursor-pointer py-1 border border-gray-300 rounded-lg  bg-green-400 px-5 select-none"
                 onClick={() => handlePushbtn(6)}
               >
                 Próximo
@@ -392,13 +388,101 @@ function Email() {
                 </div>
               </div>
             ) : pushBtn === 3 ? (
-              <div>Publico</div>
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between">
+                <div className="w-[50%] flex flex-col gap-4">
+                  <p className="w-[80%]">
+                    Publique para um público específico por geolocalização
+                  </p>
+
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Imagem do estabelecimento"
+                  />
+                  <p className="font-semibold text-gray-500 mb-2">
+                    Página de notificação
+                  </p>
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Título da página"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Título da notificação"
+                  />
+                </div>
+                <div></div>
+              </div>
             ) : pushBtn === 4 ? (
-              <div>Prévia</div>
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-center gap-8">
+                <div>
+                  <p className="text-center mb-6">notificação de push</p>
+                  <Image src={phone1} alt="phone1" height={205} width={205} />
+                </div>
+                <div>
+                  <p className="text-center mb-5">página do desconto</p>
+                  <Image src={phone2} alt="phone2" height={230} width={230} />
+                </div>
+              </div>
             ) : pushBtn === 5 ? (
-              <div>Enviar</div>
+              <div className="py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5 mt-3">
+                <div className="w-[60%] flex justify-start">
+                  <TextField
+                    fullWidth
+                    size="small"
+                    id="outlined-basic"
+                    label="Email"
+                    variant="outlined"
+                    value="digite os emails e separe por vírgula"
+                  />
+                </div>
+                <div className="w-[60%] flex justify-start">
+                  <FormControl fullWidth size="small">
+                    <InputLabel id="demo-simple-select-label">
+                      Selecionar público
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={age}
+                      label="Selecionar público"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={10}>público 1</MenuItem>
+                      <MenuItem value={20}>público 2</MenuItem>
+                      <MenuItem value={30}>público 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+                <div className="w-[60%] flex justify-start items-center">
+                  <div className="w-full rounded-md flex items-center">
+                    <Input
+                      type="file"
+                      className="absolute top-0 left-0 w-full h-full opacity-50 cursor-pointer"
+                      onChange={handleFileChange}
+                    />
+                  </div>
+                  <span className="ml-2">.csv/.pdf</span>
+                </div>
+              </div>
             ) : (
-              <div>Próximo</div>
+              <div className="py-8 p-5 border border-gray-300 rounded-md flex flex-col items-center gap-5">
+                <p>Sua mensagem foi enviada com sucesso!</p>
+                <Image
+                  src={imgEnviado}
+                  alt="email sent"
+                  height={220}
+                  width={250}
+                />
+              </div>
             )}
           </div>
         ) : active === 3 ? (
