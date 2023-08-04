@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import imgEnviado from "@/assets/images/enviado.svg";
 import StartNav from "@/components/common/notifications/StartNav";
 import BtnBox from "@/components/common/notifications/BtnBox";
 // import ReactQuill from "react-quill";
@@ -16,6 +17,7 @@ import {
 } from "@mui/material";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import { styled } from "@mui/material/styles";
+import Image from "next/image";
 
 const btnState = [
   {
@@ -116,26 +118,38 @@ function Email() {
         {/* rich text editor  */}
         {active === 1 ? (
           <div className="w-full h-[430px] border rounded-md p-3">
-            <div className="mb-2 flex gap-4 font-semibold">
+            <div className="mb-2 flex justify-between gap-4 font-semibold">
+              <div className="flex gap-5">
+                <p
+                  className={
+                    emailBtn === 1
+                      ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleEmailbtn(1)}
+                >
+                  Design
+                </p>
+                <p
+                  className={
+                    emailBtn === 2
+                      ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleEmailbtn(2)}
+                >
+                  Enviar
+                </p>
+              </div>
               <p
                 className={
-                  emailBtn === 1
+                  emailBtn === 3
                     ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
                     : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
                 }
-                onClick={() => handleEmailbtn(1)}
+                onClick={() => handleEmailbtn(3)}
               >
-                Design
-              </p>
-              <p
-                className={
-                  emailBtn === 2
-                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
-                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
-                }
-                onClick={() => handleEmailbtn(2)}
-              >
-                Enviar
+                Enviado!
               </p>
             </div>
 
@@ -147,7 +161,7 @@ function Email() {
                 modules={{ toolbar: toolbarOptions, font: false }}
                 style={editorContainerStyle}
               />
-            ) : (
+            ) : emailBtn === 2 ? (
               <div className=" py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5">
                 <div className="w-[60%] flex justify-start">
                   <TextField
@@ -187,6 +201,16 @@ function Email() {
                   </div>
                   <span className="ml-2">.csv/.pdf</span>
                 </div>
+              </div>
+            ) : (
+              <div className="py-8 p-5 border border-gray-300 rounded-md flex flex-col items-center gap-5">
+                <Image
+                  src={imgEnviado}
+                  alt="email sent"
+                  height={220}
+                  width={250}
+                />
+                <p>Sua mensagem foi enviada com sucesso!</p>
               </div>
             )}
           </div>
