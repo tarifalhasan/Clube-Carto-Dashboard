@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import imgEnviado from "@/assets/images/enviado.svg";
 import phone1 from "@/assets/images/phone/phone1.svg";
 import phone2 from "@/assets/images/phone/phone2.png";
+import phone3 from "@/assets/images/phone/phone3.png";
 import StartNav from "@/components/common/notifications/StartNav";
 import BtnBox from "@/components/common/notifications/BtnBox";
 // import ReactQuill from "react-quill";
@@ -127,7 +128,7 @@ function Email() {
             {displayBtns}
           </div>
         </div>
-        {/* rich text editor  */}
+        {/* Email page start active === 1  */}
         {active === 1 ? (
           <div className="w-full  border rounded-md p-3">
             <div className=" mb-2 flex justify-between gap-4 font-semibold">
@@ -533,9 +534,51 @@ function Email() {
             </div>
 
             {smsBtn === 1 ? (
-              <div>Design</div>
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between gap-5">
+                <div className="mt-24 w-[60%] flex flex-col gap-6">
+                  <TextField
+                    sx={{ width: "70%" }}
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Título (até 20 caracteres)"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Subtítulo (até 35 caracteres)"
+                  />
+                </div>
+                <div>
+                  <Image src={phone3} alt="phone3" height={200} width={200} />
+                </div>
+              </div>
             ) : smsBtn === 2 ? (
-              <div>Prévia</div>
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between gap-5">
+                <div className="mt-24 w-[60%] flex flex-col gap-6">
+                  <TextField
+                    sx={{ width: "70%" }}
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Título (até 20 caracteres)"
+                    value="Pra adoçar seu dia...😍"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Subtítulo (até 35 caracteres)"
+                    value="Um desconto pro açaí. Vem pro app! ✅"
+                  />
+                </div>
+                <div>
+                  <Image src={phone1} alt="phone1" height={200} width={200} />
+                </div>
+              </div>
             ) : smsBtn === 3 ? (
               <div>Enviar</div>
             ) : (
