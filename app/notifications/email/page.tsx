@@ -522,14 +522,10 @@ function Email() {
                 </p>
               </div>
               <p
-                className={
-                  smsBtn === 4
-                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
-                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
-                }
+                className="cursor-pointer py-1 px-4 border border-gray-300 rounded-lg bg-green-400 select-none"
                 onClick={() => handleSMSbtn(4)}
               >
-                Próximo
+                Enviado!
               </p>
             </div>
 
@@ -623,7 +619,15 @@ function Email() {
                 </div>
               </div>
             ) : (
-              <div>Próximo</div>
+              <div className="py-8 p-5 border border-gray-300 rounded-md flex flex-col items-center gap-5">
+                <Image
+                  src={imgEnviado}
+                  alt="email sent"
+                  height={220}
+                  width={250}
+                />
+                <p>Sua mensagem foi enviada com sucesso!</p>
+              </div>
             )}
           </div>
         ) : (
