@@ -16,7 +16,6 @@ import {
   TextField,
 } from "@mui/material";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
-import { styled } from "@mui/material/styles";
 import Image from "next/image";
 
 const btnState = [
@@ -54,7 +53,6 @@ const toolbarOptions = [
 ];
 const editorContainerStyle = {
   height: "320px", // Set the desired height here (e.g., 500px).
-  // You can also use other CSS properties like 'minHeight', 'maxHeight', etc.
 };
 
 function Email() {
@@ -62,6 +60,9 @@ function Email() {
   const [btnGrp, setBtnGrp] = useState(btnState);
   const [value, setValue] = useState("");
   const [emailBtn, setEmailBtn] = useState(1);
+  const [pushBtn, setPushBtn] = useState(1);
+  const [smsBtn, setSmsBtn] = useState(1);
+  const [chatBtn, setChatBtn] = useState(1);
   const [age, setAge] = React.useState("");
 
   const handleChange = (event: any) => {
@@ -94,6 +95,15 @@ function Email() {
 
   const handleEmailbtn = (value: number) => {
     setEmailBtn(value);
+  };
+  const handlePushbtn = (value: number) => {
+    setPushBtn(value);
+  };
+  const handleSMSbtn = (value: number) => {
+    setSmsBtn(value);
+  };
+  const handleChatbtn = (value: number) => {
+    setChatBtn(value);
   };
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = event.target.files?.[0];
@@ -215,11 +225,198 @@ function Email() {
             )}
           </div>
         ) : active === 2 ? (
-          <div className="w-full h-[430px] border rounded-md p-3">Push</div>
+          <div className="w-full h-[430px] border rounded-md p-3">
+            <div className="mb-2 flex justify-between gap-4 font-semibold">
+              <p
+                className={
+                  pushBtn === 1
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handlePushbtn(1)}
+              >
+                Push
+              </p>
+              <p
+                className={
+                  pushBtn === 2
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handlePushbtn(2)}
+              >
+                Página
+              </p>
+              <p
+                className={
+                  pushBtn === 3
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handlePushbtn(3)}
+              >
+                Público
+              </p>
+              <p
+                className={
+                  pushBtn === 4
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handlePushbtn(4)}
+              >
+                Prévia
+              </p>
+              <p
+                className={
+                  pushBtn === 5
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handlePushbtn(5)}
+              >
+                Enviar
+              </p>
+              <p
+                className={
+                  pushBtn === 6
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handlePushbtn(6)}
+              >
+                Próximo
+              </p>
+            </div>
+
+            {pushBtn === 1 ? (
+              <div>Push</div>
+            ) : pushBtn === 2 ? (
+              <div>Pagina</div>
+            ) : pushBtn === 3 ? (
+              <div>Publico</div>
+            ) : pushBtn === 4 ? (
+              <div>Prévia</div>
+            ) : pushBtn === 5 ? (
+              <div>Enviar</div>
+            ) : (
+              <div>Próximo</div>
+            )}
+          </div>
         ) : active === 3 ? (
-          <div className="w-full h-[430px] border rounded-md p-3">SMS</div>
+          <div className="w-full h-[430px] border rounded-md p-3">
+            <div className="mb-2 flex justify-between gap-4 font-semibold">
+              <div className="flex gap-5">
+                <p
+                  className={
+                    smsBtn === 1
+                      ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleSMSbtn(1)}
+                >
+                  Design
+                </p>
+                <p
+                  className={
+                    smsBtn === 2
+                      ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleSMSbtn(2)}
+                >
+                  Prévia
+                </p>
+                <p
+                  className={
+                    smsBtn === 3
+                      ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleSMSbtn(3)}
+                >
+                  Enviar
+                </p>
+              </div>
+              <p
+                className={
+                  smsBtn === 4
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handleSMSbtn(4)}
+              >
+                Próximo
+              </p>
+            </div>
+
+            {smsBtn === 1 ? (
+              <div>Design</div>
+            ) : smsBtn === 2 ? (
+              <div>Prévia</div>
+            ) : smsBtn === 3 ? (
+              <div>Enviar</div>
+            ) : (
+              <div>Próximo</div>
+            )}
+          </div>
         ) : (
-          <div className="w-full h-[430px] border rounded-md p-3">Chat</div>
+          <div className="w-full h-[430px] border rounded-md p-3">
+            <div className="mb-2 flex justify-between gap-4 font-semibold">
+              <div className="flex gap-5">
+                <p
+                  className={
+                    chatBtn === 1
+                      ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleChatbtn(1)}
+                >
+                  Design
+                </p>
+                <p
+                  className={
+                    chatBtn === 2
+                      ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleChatbtn(2)}
+                >
+                  Prévia
+                </p>
+                <p
+                  className={
+                    chatBtn === 3
+                      ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleChatbtn(3)}
+                >
+                  Enviar
+                </p>
+              </div>
+              <p
+                className={
+                  chatBtn === 4
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handleChatbtn(4)}
+              >
+                Próximo
+              </p>
+            </div>
+
+            {chatBtn === 1 ? (
+              <div>Design</div>
+            ) : chatBtn === 2 ? (
+              <div>Prévia</div>
+            ) : chatBtn === 3 ? (
+              <div>Enviar</div>
+            ) : (
+              <div>Próximo</div>
+            )}
+          </div>
         )}
       </div>
     </div>
