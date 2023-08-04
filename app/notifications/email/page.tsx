@@ -6,7 +6,16 @@ import BtnBox from "@/components/common/notifications/BtnBox";
 // import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
+import {
+  FormControl,
+  Input,
+  InputLabel,
+  MenuItem,
+  Select,
+  TextField,
+} from "@mui/material";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+import { styled } from "@mui/material/styles";
 
 const btnState = [
   {
@@ -50,6 +59,12 @@ function Email() {
   const [active, setActive] = useState(1);
   const [btnGrp, setBtnGrp] = useState(btnState);
   const [value, setValue] = useState("");
+  const [emailBtn, setEmailBtn] = useState(1);
+  const [age, setAge] = React.useState("");
+
+  const handleChange = (event: any) => {
+    setAge(event.target.value);
+  };
 
   const toggle = (id: number) => {
     setActive(id);
@@ -74,6 +89,17 @@ function Email() {
       />
     );
   });
+
+  const handleEmailbtn = (value: number) => {
+    setEmailBtn(value);
+  };
+  const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const selectedFile = event.target.files?.[0];
+    if (selectedFile) {
+      console.log("Selected file:", selectedFile);
+      // You can do further processing or upload the file to the server here
+    }
+  };
   return (
     <div>
       <StartNav name="Email" />
@@ -91,21 +117,78 @@ function Email() {
         {active === 1 ? (
           <div className="w-full h-[430px] border rounded-md p-3">
             <div className="mb-2 flex gap-4 font-semibold">
-              <p className="cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none">
+              <p
+                className={
+                  emailBtn === 1
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handleEmailbtn(1)}
+              >
                 Design
               </p>
-              <p className="cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none">
+              <p
+                className={
+                  emailBtn === 2
+                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                }
+                onClick={() => handleEmailbtn(2)}
+              >
                 Enviar
               </p>
             </div>
 
-            <ReactQuill
-              theme="snow"
-              value={value}
-              onChange={setValue}
-              modules={{ toolbar: toolbarOptions, font: false }}
-              style={editorContainerStyle}
-            />
+            {emailBtn === 1 ? (
+              <ReactQuill
+                theme="snow"
+                value={value}
+                onChange={setValue}
+                modules={{ toolbar: toolbarOptions, font: false }}
+                style={editorContainerStyle}
+              />
+            ) : (
+              <div className=" py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5">
+                <div className="w-[60%] flex justify-start">
+                  <TextField
+                    fullWidth
+                    size="small"
+                    id="outlined-basic"
+                    label="Email"
+                    variant="outlined"
+                    value="digite os emails e separe por vírgula"
+                  />
+                </div>
+                <div className="w-[60%] flex justify-start">
+                  <FormControl fullWidth size="small">
+                    <InputLabel id="demo-simple-select-label">
+                      Selecionar público
+                    </InputLabel>
+                    <Select
+                      labelId="demo-simple-select-label"
+                      id="demo-simple-select"
+                      value={age}
+                      label="Selecionar público"
+                      onChange={handleChange}
+                    >
+                      <MenuItem value={10}>público 1</MenuItem>
+                      <MenuItem value={20}>público 2</MenuItem>
+                      <MenuItem value={30}>público 3</MenuItem>
+                    </Select>
+                  </FormControl>
+                </div>
+                <div className="w-[60%] flex justify-start items-center">
+                  <div className="w-full rounded-md flex items-center">
+                    <Input
+                      type="file"
+                      className="absolute top-0 left-0 w-full h-full opacity-50 cursor-pointer"
+                      onChange={handleFileChange}
+                    />
+                  </div>
+                  <span className="ml-2">.csv/.pdf</span>
+                </div>
+              </div>
+            )}
           </div>
         ) : active === 2 ? (
           <div className="w-full h-[430px] border rounded-md p-3">Push</div>
