@@ -7,7 +7,7 @@ export default function DashboardLayout({
 }) {
   return (
     <section className=" relative h-full pb-7  space-y-5 lg:space-y-8">
-      <MainNavbar title="Produtos" />
+      <MainNavbar title="Carteira" />
       {children}
     </section>
   );

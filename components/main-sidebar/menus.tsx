@@ -9,7 +9,10 @@ import {
   PermissõesIconSvg,
   TelemedicineIcon,
   TicketIconSvg,
+  TlCard,
+  TlProductIcon,
 } from "@/assets/svg/icons";
+import { carteira_routes } from "@/constant/carteira";
 import { cinema_routes } from "@/constant/cinema";
 import {
   CashbackRoutess,
@@ -21,6 +24,7 @@ import {
   TelemedicineRoutes,
   associadosButtonData,
 } from "@/constant/data";
+import { products_routes } from "@/constant/products";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -167,6 +171,22 @@ const CustomMenus = () => {
         active={isRouteActive("/cinema")} // Check if route is active
       >
         <Menuitem childRoute="cinema" routes={cinema_routes} />
+      </SubMenu>
+      <SubMenu
+        label="Carteira"
+        component={<Link href={"/carteira"} />}
+        icon={<TlCard />}
+        active={isRouteActive("/carteira")} // Check if route is active
+      >
+        <Menuitem childRoute="carteira" routes={carteira_routes} />
+      </SubMenu>
+      <SubMenu
+        label="Produtos"
+        component={<Link href={"/produtos"} />}
+        icon={<TlProductIcon />}
+        active={isRouteActive("/produtos")} // Check if route is active
+      >
+        <Menuitem childRoute="produtos" routes={products_routes} />
       </SubMenu>
 
       <MenuItem

@@ -1,5 +1,4 @@
 import { ProfileIcon } from "@/assets/svg/icons";
-import React from "react";
 import { GoArrowUpRight } from "react-icons/go";
 
 interface CardInterface {
