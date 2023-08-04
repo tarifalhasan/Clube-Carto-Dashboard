@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import imgEnviado from "@/assets/images/enviado.svg";
+import phone1 from "@/assets/images/phone/phone1.svg";
+import phone2 from "@/assets/images/phone/phone2.png";
 import StartNav from "@/components/common/notifications/StartNav";
 import BtnBox from "@/components/common/notifications/BtnBox";
 // import ReactQuill from "react-quill";
@@ -127,8 +129,8 @@ function Email() {
         </div>
         {/* rich text editor  */}
         {active === 1 ? (
-          <div className="w-full h-[430px] border rounded-md p-3">
-            <div className="mb-2 flex justify-between gap-4 font-semibold">
+          <div className="w-full  border rounded-md p-3">
+            <div className=" mb-2 flex justify-between gap-4 font-semibold">
               <div className="flex gap-5">
                 <p
                   className={
@@ -172,7 +174,7 @@ function Email() {
                 style={editorContainerStyle}
               />
             ) : emailBtn === 2 ? (
-              <div className=" py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5">
+              <div className="py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5 mt-3">
                 <div className="w-[60%] flex justify-start">
                   <TextField
                     fullWidth
@@ -225,7 +227,7 @@ function Email() {
             )}
           </div>
         ) : active === 2 ? (
-          <div className="w-full h-[430px] border rounded-md p-3">
+          <div className="w-full border rounded-md p-3">
             <div className="mb-2 flex justify-between gap-4 font-semibold">
               <p
                 className={
@@ -290,9 +292,105 @@ function Email() {
             </div>
 
             {pushBtn === 1 ? (
-              <div>Push</div>
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between gap-5">
+                <div className="w-[50%] flex flex-col gap-6">
+                  <div>
+                    <h3 className="font-bold">Crie sua Campanha </h3>
+                    <p className="mt-2">
+                      Como seu cliente vai receber a suamensagem na tela
+                      bloqueada
+                    </p>
+                  </div>
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Titulo da notificação*"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Descrição da notificação*"
+                  />
+                </div>
+                <div>
+                  <Image src={phone1} alt="phone1" height={200} width={200} />
+                </div>
+              </div>
             ) : pushBtn === 2 ? (
-              <div>Pagina</div>
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between">
+                <div className="w-[50%] flex flex-col gap-4">
+                  <p className="w-[70%]">
+                    Agora vamos para a telado aplicativo seu cliente
+                  </p>
+
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Imagem do estabelecimento"
+                  />
+                  <p className="font-semibold text-gray-500 mb-2">
+                    Página de notificação
+                  </p>
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Título da página"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Título da notificação"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Descrição da notificação"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Código para copiar dentro da notificação"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Regras do desconto"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Botão de redirecionamento dentro do aplicativo (para uma pagina dentro ou fora do app)"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Texto do botão de redirecionamento"
+                  />
+                </div>
+                <div>
+                  <Image src={phone2} alt="phone2" height={230} width={230} />
+                </div>
+              </div>
             ) : pushBtn === 3 ? (
               <div>Publico</div>
             ) : pushBtn === 4 ? (
