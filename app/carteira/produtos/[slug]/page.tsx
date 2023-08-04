@@ -54,7 +54,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         }}
         className=" sm:h-[332px]  h-full py-5"
       >
-        <div className=" pt-24 flex justify-between gap-10 flex-wrap  lg:flex-nowrap  items-end pr-6 pl-6 lg:pl-16">
+        <div className=" pt-24 flex justify-between gap-10 flex-wrap lg:flex-nowrap  items-end pr-6 pl-6 lg:pl-16">
           <div className=" flex flex-col  sm:flex-row  gap-10">
             <div
               style={{
