@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import imgEnviado from "@/assets/images/enviado.svg";
 import phone1 from "@/assets/images/phone/phone1.svg";
-import phone2 from "@/assets/images/phone/phone2.svg";
+import phone2 from "@/assets/images/phone/phone2.png";
 import StartNav from "@/components/common/notifications/StartNav";
 import BtnBox from "@/components/common/notifications/BtnBox";
 // import ReactQuill from "react-quill";
@@ -321,7 +321,76 @@ function Email() {
                 </div>
               </div>
             ) : pushBtn === 2 ? (
-              <div>Pagina</div>
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between">
+                <div className="w-[50%] flex flex-col gap-4">
+                  <p className="w-[70%]">
+                    Agora vamos para a telado aplicativo seu cliente
+                  </p>
+
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Imagem do estabelecimento"
+                  />
+                  <p className="font-semibold text-gray-500 mb-2">
+                    Página de notificação
+                  </p>
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Título da página"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Título da notificação"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Descrição da notificação"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Código para copiar dentro da notificação"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Regras do desconto"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Botão de redirecionamento dentro do aplicativo (para uma pagina dentro ou fora do app)"
+                  />
+                  <TextField
+                    fullWidth
+                    size="small"
+                    variant="outlined"
+                    id="outlined-basic"
+                    label="Texto do botão de redirecionamento"
+                  />
+                </div>
+                <div>
+                  <Image src={phone2} alt="phone2" height={230} width={230} />
+                </div>
+              </div>
             ) : pushBtn === 3 ? (
               <div>Publico</div>
             ) : pushBtn === 4 ? (
