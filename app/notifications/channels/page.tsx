@@ -727,7 +727,46 @@ function Email() {
                 </div>
               </div>
             ) : chatBtn === 2 ? (
-              <div>Prévia</div>
+              <div className="flex justify-between gap-5">
+                <div className="my-12 w-[50%]">
+                  <div className="mb-6">
+                    <p>Saudação (até 20 caracteres)</p>
+                    <p className="px-1 py-2 border border-gray-300 rounded-lg">
+                      Olá! Precisa de ajuda?
+                    </p>
+                  </div>
+                  <div className="mb-6">
+                    <p>Mensagem de boas vindas (até 35 caracteres)</p>
+                    <p className="px-1 py-2 border border-gray-300 rounded-lg">
+                      Olá! Como podemos ajudar?
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-[70%] flex items-end">
+                      <p className="w-full px-1 py-2 border border-gray-300 rounded-lg">
+                        Olá! Precisa de ajuda?
+                      </p>
+                    </div>
+                    <Image src={vector} alt="vector" height={80} width={80} />
+                  </div>
+                </div>
+                <div className="w-[35%] flex items-end">
+                  <div className="mb-8 h-[50%] w-full pb-3 border border-gray-300 rounded-lg flex flex-col justify-between">
+                    <div className="flex justify-between p-1">
+                      <p className="p-2">Olá! Como podemos ajudar?</p>
+                      <Image src={vector} alt="vector" height={40} width={40} />
+                    </div>
+                    <div className="flex gap-1 p-1">
+                      <p className="w-full py-2 px-1 border border-gray-300 rounded-md text-xs">
+                        digite sua mensagem...
+                      </p>
+                      <div className="px-2 py-1 border border-gary-300 bg-green-300 rounded-lg">
+                        <MoreHorizIcon />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ) : chatBtn === 3 ? (
               <div>Enviar</div>
             ) : (
