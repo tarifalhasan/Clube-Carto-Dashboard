@@ -7,8 +7,10 @@ import imgEnviado from "@/assets/images/enviado.svg";
 import phone1 from "@/assets/images/phone/phone1.svg";
 import phone2 from "@/assets/images/phone/phone2.png";
 import phone3 from "@/assets/images/phone/phone3.png";
+import vector from "@/assets/images/Vector.svg";
 import StartNav from "@/components/common/notifications/StartNav";
 import BtnBox from "@/components/common/notifications/BtnBox";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
 import {
@@ -691,7 +693,39 @@ function Email() {
             </div>
 
             {chatBtn === 1 ? (
-              <div>Design</div>
+              <div className="flex justify-between gap-5">
+                <div className="my-12 w-[50%]">
+                  <div className="mb-6">
+                    <p>Saudação (até 20 caracteres)</p>
+                    <p className="py-4 border border-gray-300 rounded-lg"></p>
+                  </div>
+                  <div className="mb-6">
+                    <p>Saudação (até 20 caracteres)</p>
+                    <p className="py-4 border border-gray-300 rounded-lg"></p>
+                  </div>
+                  <div className="flex gap-3">
+                    <div className="w-[70%] flex items-end">
+                      <p className="w-full py-4 border border-gray-300 rounded-lg"></p>
+                    </div>
+                    <Image src={vector} alt="vector" height={80} width={80} />
+                  </div>
+                </div>
+                <div className="w-[35%] flex items-end">
+                  <div className="mb-8 h-[50%] w-full pb-3 border border-gray-300 rounded-lg flex flex-col justify-between">
+                    <div className="flex justify-end p-1">
+                      <Image src={vector} alt="vector" height={40} width={40} />
+                    </div>
+                    <div className="flex gap-1 p-1">
+                      <p className="w-full py-2 px-1 border border-gray-300 rounded-md text-xs">
+                        digite sua mensagem...
+                      </p>
+                      <div className="px-2 py-1 border border-gary-300 bg-green-300 rounded-lg">
+                        <MoreHorizIcon />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             ) : chatBtn === 2 ? (
               <div>Prévia</div>
             ) : chatBtn === 3 ? (
