@@ -259,7 +259,7 @@ function Email() {
           </div>
         ) : active === 2 ? (
           <div className="w-full border rounded-md p-3">
-            <div className="mb-2 flex justify-between gap-4 font-semibold">
+            <div className="mb-2 flex flex-wrap justify-start  md:justify-between gap-3 md:gap-4 font-semibold">
               <p
                 className={
                   pushBtn === 1
@@ -319,8 +319,8 @@ function Email() {
             </div>
 
             {pushBtn === 1 ? (
-              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between gap-5">
-                <div className="w-[50%] flex flex-col gap-6">
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex flex-col md:flex-row justify-between gap-5">
+                <div className="w-full md:w-[50%] flex flex-col gap-6">
                   <div>
                     <h3 className="font-bold">Crie sua Campanha </h3>
                     <p className="mt-2">
@@ -348,8 +348,8 @@ function Email() {
                 </div>
               </div>
             ) : pushBtn === 2 ? (
-              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between">
-                <div className="w-[50%] flex flex-col gap-4">
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex flex-col gap-5 md:gap-0  md:flex-row justify-between">
+                <div className="w-full md:w-[50%] flex flex-col gap-4">
                   <p className="w-[70%]">
                     Agora vamos para a telado aplicativo seu cliente
                   </p>
@@ -419,8 +419,8 @@ function Email() {
                 </div>
               </div>
             ) : pushBtn === 3 ? (
-              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between">
-                <div className="w-[50%] flex flex-col gap-4">
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex flex-col md:flex-row justify-between">
+                <div className="w-full md:w-[50%] flex flex-col gap-4">
                   <p className="w-[80%]">
                     Publique para um público específico por geolocalização
                   </p>
@@ -465,7 +465,7 @@ function Email() {
               </div>
             ) : pushBtn === 5 ? (
               <div className="py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5 mt-3">
-                <div className="w-[60%] flex justify-start">
+                <div className="w-full md:w-[60%] flex justify-start">
                   <TextField
                     fullWidth
                     size="small"
@@ -475,7 +475,7 @@ function Email() {
                     value="digite os emails e separe por vírgula"
                   />
                 </div>
-                <div className="w-[60%] flex justify-start">
+                <div className="w-full md:w-[60%] flex justify-start">
                   <FormControl fullWidth size="small">
                     <InputLabel id="demo-simple-select-label">
                       Selecionar público
@@ -493,7 +493,7 @@ function Email() {
                     </Select>
                   </FormControl>
                 </div>
-                <div className="w-[60%] flex justify-start items-center">
+                <div className="w-full md:w-[60%] flex justify-start items-center">
                   <div className="w-full rounded-md flex items-center">
                     <Input
                       type="file"
@@ -518,7 +518,7 @@ function Email() {
           </div>
         ) : active === 3 ? (
           <div className="w-full border rounded-md p-3">
-            <div className="mb-2 flex justify-between gap-4 font-semibold">
+            <div className="mb-2 flex flex-wrap justify-between gap-4 font-semibold">
               <div className="flex gap-5">
                 <p
                   className={
@@ -561,8 +561,8 @@ function Email() {
 
             {smsBtn === 1 ? (
               // Design start
-              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between gap-5">
-                <div className="mt-24 w-[60%] flex flex-col gap-6">
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex flex-col md:flex-row justify-between gap-5">
+                <div className="mt-5 md:mt-24 w-full md:w-[60%] flex flex-col gap-6">
                   <TextField
                     sx={{ width: "70%" }}
                     size="small"
@@ -585,8 +585,8 @@ function Email() {
             ) : // Design end
             smsBtn === 2 ? (
               // previa start
-              <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-between gap-5">
-                <div className="mt-24 w-[60%] flex flex-col gap-6">
+              <div className="my-3 p-5 border border-gray-300 rounded-md flex flex-col md:flex-row justify-between gap-5">
+                <div className="mt-5 md:mt-24 w-full md:w-[60%] flex flex-col gap-6">
                   <TextField
                     sx={{ width: "70%" }}
                     size="small"
@@ -609,7 +609,7 @@ function Email() {
             ) : // previa end
             smsBtn === 3 ? (
               <div className="py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5 mt-3">
-                <div className="w-[60%] flex justify-start">
+                <div className="w-full md:w-[60%] flex justify-start">
                   <TextField
                     fullWidth
                     size="small"
@@ -619,7 +619,7 @@ function Email() {
                     value="digite os emails e separe por vírgula"
                   />
                 </div>
-                <div className="w-[60%] flex justify-start">
+                <div className="w-full md:w-[60%] flex justify-start">
                   <FormControl fullWidth size="small">
                     <InputLabel id="demo-simple-select-label">
                       Selecionar público
@@ -637,7 +637,7 @@ function Email() {
                     </Select>
                   </FormControl>
                 </div>
-                <div className="w-[60%] flex justify-start items-center">
+                <div className="w-full md:w-[60%] flex justify-start items-center">
                   <div className="w-full rounded-md flex items-center">
                     <Input
                       type="file"
@@ -662,7 +662,7 @@ function Email() {
           </div>
         ) : (
           <div className="w-full border rounded-md p-3">
-            <div className="mb-2 flex justify-between gap-4 font-semibold">
+            <div className="mb-2 flex flex-wrap justify-between gap-4 font-semibold">
               <div className="flex gap-5">
                 <p
                   className={
@@ -708,8 +708,8 @@ function Email() {
             </div>
 
             {chatBtn === 1 ? (
-              <div className="flex justify-between gap-5">
-                <div className="my-12 w-[50%]">
+              <div className="flex flex-col md:flex-row md:justify-between gap-5">
+                <div className="my-5 md:my-12 w-[70%] md:w-[50%]">
                   <div className="mb-6">
                     <p>Saudação (até 20 caracteres)</p>
                     <p className="py-4 border border-gray-300 rounded-lg"></p>
@@ -725,7 +725,7 @@ function Email() {
                     <Image src={vector} alt="vector" height={80} width={80} />
                   </div>
                 </div>
-                <div className="w-[35%] flex items-end">
+                <div className="ml-auto  w-[70%] md:w-[35%] flex items-end">
                   <div className="mb-8 h-[50%] w-full pb-3 border border-gray-300 rounded-lg flex flex-col justify-between">
                     <div className="flex justify-end p-1">
                       <Image src={vector} alt="vector" height={40} width={40} />
@@ -742,8 +742,8 @@ function Email() {
                 </div>
               </div>
             ) : chatBtn === 2 ? (
-              <div className="flex justify-between gap-5">
-                <div className="my-12 w-[50%]">
+              <div className="flex flex-col md:flex-row md:justify-between gap-5">
+                <div className="my-5 md:my-12 w-[70%] md:w-[50%]">
                   <div className="mb-6">
                     <p>Saudação (até 20 caracteres)</p>
                     <p className="px-1 py-2 border border-gray-300 rounded-lg">
@@ -765,7 +765,7 @@ function Email() {
                     <Image src={vector} alt="vector" height={80} width={80} />
                   </div>
                 </div>
-                <div className="w-[35%] flex items-end">
+                <div className="ml-auto  w-[70%] md:w-[35%] flex items-end">
                   <div className="mb-8 h-[50%] w-full pb-3 border border-gray-300 rounded-lg flex flex-col justify-between">
                     <div className="flex justify-between p-1">
                       <p className="p-2">Olá! Como podemos ajudar?</p>

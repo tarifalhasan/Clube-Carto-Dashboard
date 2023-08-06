@@ -12,7 +12,7 @@ function StartNav({ name }: { name: string }) {
     router.back();
   };
   return (
-    <div className="py-5 flex justify-between">
+    <div className="py-5 flex flex-col md:flex-row gap-3 justify-between">
       <div
         className="w-[15%] flex items-center hover:text-blue-500 cursor-pointer"
         onClick={handleRoute}
@@ -20,7 +20,7 @@ function StartNav({ name }: { name: string }) {
         <ArrowBackIosIcon fontSize="small" />
         <p className="font-semibold text-xl">{name}</p>
       </div>
-      <div className="w-[85%] flex text-sm gap-2">
+      <div className="w-[85%] flex flex-wrap text-sm gap-2">
         <SingleButton name="Email" />
         <SingleButton name="Push" />
         <SingleButton name="SMS" />
