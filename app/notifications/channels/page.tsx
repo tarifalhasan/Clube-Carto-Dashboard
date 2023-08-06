@@ -148,7 +148,7 @@ function Email() {
         </div>
         {/* Email page start active === 1  */}
         {active === 1 ? (
-          <div className="w-full  border rounded-md p-3">
+          <div className="w-full h-[430px] border rounded-md p-3">
             <div className=" mb-2 flex justify-between gap-4 font-semibold">
               <div className="flex gap-5">
                 <p
@@ -505,7 +505,7 @@ function Email() {
             )}
           </div>
         ) : active === 3 ? (
-          <div className="w-full h-[430px] border rounded-md p-3">
+          <div className="w-full border rounded-md p-3">
             <div className="mb-2 flex justify-between gap-4 font-semibold">
               <div className="flex gap-5">
                 <p
