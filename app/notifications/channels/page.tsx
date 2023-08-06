@@ -141,16 +141,17 @@ function Email() {
       <h2 className="text-lg">
         Crie uma notificação de email personalizada para o seu público
       </h2>
-      <div className="py-8 flex gap-5">
+      <div className="py-8 flex flex-col md:flex-row gap-5">
         <div>
           <div className="flex flex-col gap-3 border border-gray-200 p-3 rounded-md">
             {displayBtns}
           </div>
         </div>
+
         {/* Email page start active === 1  */}
         {active === 1 ? (
           <div className="w-full h-[430px] border rounded-md p-3">
-            <div className=" mb-2 flex justify-between gap-4 font-semibold">
+            <div className="mb-2 flex flex-col md:flex-row md:justify-between gap-4 font-semibold">
               <div className="flex gap-5">
                 <p
                   className={
@@ -172,12 +173,22 @@ function Email() {
                 >
                   Enviar
                 </p>
+                <p
+                  className={
+                    emailBtn === 3
+                      ? "md:hidden cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "md:hidden cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleEmailbtn(3)}
+                >
+                  Enviado!
+                </p>
               </div>
               <p
                 className={
                   emailBtn === 3
-                    ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
-                    : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                    ? "hidden md:block cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                    : "hidden md:block cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
                 }
                 onClick={() => handleEmailbtn(3)}
               >
@@ -195,7 +206,7 @@ function Email() {
               />
             ) : emailBtn === 2 ? (
               <div className="py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5 mt-3">
-                <div className="w-[60%] flex justify-start">
+                <div className="w-full md:w-[60%] flex justify-start">
                   <TextField
                     fullWidth
                     size="small"
@@ -205,7 +216,7 @@ function Email() {
                     value="digite os emails e separe por vírgula"
                   />
                 </div>
-                <div className="w-[60%] flex justify-start">
+                <div className="w-full md:w-[60%] flex justify-start">
                   <FormControl fullWidth size="small">
                     <InputLabel id="demo-simple-select-label">
                       Selecionar público
@@ -223,7 +234,7 @@ function Email() {
                     </Select>
                   </FormControl>
                 </div>
-                <div className="w-[60%] flex justify-start items-center">
+                <div className="w-full md:w-[60%] flex justify-start items-center">
                   <div className="w-full rounded-md flex items-center">
                     <Input
                       type="file"
