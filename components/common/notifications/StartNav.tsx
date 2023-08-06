@@ -1,20 +1,31 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useContext } from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import SingleButton from "@/components/common/notifications/SingleButton";
+import { GlobalStates } from "@/app/context";
 
 function StartNav({ name }: { name: string }) {
+  const { updateChannel } = useContext(GlobalStates);
+
   const router = useRouter();
 
   const handleRoute = () => {
     router.back();
   };
+  const handleClick = () => {
+    router.push("/notifications/channels");
+    updateChannel(name);
+  };
+
   return (
-    <div className="py-5 flex flex-col md:flex-row gap-3 justify-between">
+    <div
+      className="py-5 flex flex-col md:flex-row gap-3 justify-between"
+      onClick={handleClick}
+    >
       <div
-        className="w-[15%] flex items-center hover:text-blue-500 cursor-pointer"
+        className="w-[20%] flex items-center hover:text-blue-500 cursor-pointer"
         onClick={handleRoute}
       >
         <ArrowBackIosIcon fontSize="small" />
