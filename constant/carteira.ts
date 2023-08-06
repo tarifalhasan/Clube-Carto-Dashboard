@@ -23,7 +23,7 @@ const carteira_routes: sidebarNavigationType[] = [
   },
   {
     name: "Relatórios",
-    href: "relatórios",
+    href: "reports",
   },
   {
     name: "Mais utilizados",
