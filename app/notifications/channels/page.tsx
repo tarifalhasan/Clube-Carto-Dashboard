@@ -8,6 +8,7 @@ import phone1 from "@/assets/images/phone/phone1.svg";
 import phone2 from "@/assets/images/phone/phone2.png";
 import phone3 from "@/assets/images/phone/phone3.png";
 import vector from "@/assets/images/Vector.svg";
+import character from "@/assets/images/character.svg";
 import StartNav from "@/components/common/notifications/StartNav";
 import BtnBox from "@/components/common/notifications/BtnBox";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
@@ -866,7 +867,20 @@ function Email() {
                 </div>
               </div>
             ) : (
-              <div>Próximo</div>
+              <div className="w-full h-[380px] flex justify-center items-center">
+                <div>
+                  <p className="text-xl w-[60%] text-center">
+                    <span className="font-bold text-xl">Tudo pronto</span> seu
+                    chat foi publicado!
+                  </p>
+                  <Image
+                    src={character}
+                    alt="character"
+                    height={200}
+                    width={200}
+                  />
+                </div>
+              </div>
             )}
           </div>
         )}
