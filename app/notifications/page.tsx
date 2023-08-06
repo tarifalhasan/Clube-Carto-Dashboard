@@ -1,9 +1,14 @@
+"use client";
+
 import CanaisCard from "@/components/common/notifications/CanaisCard";
 import Card from "@/components/common/notifications/Card";
 import SingleButton from "@/components/common/notifications/SingleButton";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import { useRouter } from "next/navigation";
 
 const Notifications = () => {
+  const router = useRouter();
+
   return (
     <div>
       <div className="flex justify-between">
@@ -36,7 +41,10 @@ const Notifications = () => {
       {/* notifications  start */}
 
       <div className="py-5 flex justify-between">
-        <div className="w-[30%] flex items-center hover:text-blue-500 cursor-pointer">
+        <div
+          className="w-[30%] flex items-center hover:text-blue-500 cursor-pointer"
+          onClick={() => router.back()}
+        >
           <ArrowBackIosIcon fontSize="small" />
           <p className="font-semibold text-xl">Notificações</p>
         </div>
