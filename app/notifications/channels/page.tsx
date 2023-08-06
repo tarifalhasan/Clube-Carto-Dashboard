@@ -15,9 +15,12 @@ import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
 import {
   FormControl,
+  FormControlLabel,
   Input,
   InputLabel,
   MenuItem,
+  Radio,
+  RadioGroup,
   Select,
   TextField,
 } from "@mui/material";
@@ -646,7 +649,7 @@ function Email() {
             )}
           </div>
         ) : (
-          <div className="w-full h-[430px] border rounded-md p-3">
+          <div className="w-full border rounded-md p-3">
             <div className="mb-2 flex justify-between gap-4 font-semibold">
               <div className="flex gap-5">
                 <p
@@ -768,7 +771,100 @@ function Email() {
                 </div>
               </div>
             ) : chatBtn === 3 ? (
-              <div>Enviar</div>
+              <div className="p-3">
+                <h2 className="my-4 text-xl">
+                  <span className="font-bold text-xl">Tudo pronto</span> para
+                  publicar o seu chat!
+                </h2>
+
+                <div className="py-4">
+                  <p>
+                    <span className="font-bold">Selecione as páginas</span> em
+                    que ele poderá ser visível
+                  </p>
+                  <div>
+                    <RadioGroup
+                      aria-labelledby="demo-radio-buttons-group-label"
+                      defaultValue=""
+                      name="radio-buttons-group"
+                    >
+                      <FormControlLabel
+                        value="Todo o site"
+                        control={<Radio />}
+                        label="Todo o site"
+                      />
+                      <FormControlLabel
+                        value="Apenas na página principal"
+                        control={<Radio />}
+                        label="Apenas na página principal"
+                      />
+                      <FormControlLabel
+                        value="Apenas em páginas específicas"
+                        control={<Radio />}
+                        label="Apenas em páginas específicas"
+                      />
+                    </RadioGroup>
+                  </div>
+                </div>
+                <div className="w-[80%] flex items-center gap-3">
+                  <TextField
+                    fullWidth
+                    size="small"
+                    id="outlined-basic"
+                    variant="outlined"
+                    placeholder="adicione a URL da página que deseja publicar este chat"
+                    sx={{ fontSize: "12px" }}
+                  />
+                  <p className="px-4 py-2 bg-green-300 rounded-lg hover:bg-red-100 active:bg-red-300 cursor-pointer hover:shadow-lg select-none">
+                    adicionar
+                  </p>
+                </div>
+                <div className="my-4 flex flex-col gap-3">
+                  <p className="text-lg">
+                    <span className="font-bold text-lg">
+                      Selecione público alvo
+                    </span>
+                    que enviar sua mensagem
+                  </p>
+
+                  <div className="w-[60%] flex justify-start my-2">
+                    <FormControl fullWidth size="small">
+                      <InputLabel id="demo-simple-select-label">
+                        Selecionar grupo
+                      </InputLabel>
+                      <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={age}
+                        label="Selecionar grupo"
+                        onChange={handleChange}
+                      >
+                        <MenuItem value={10}>grupos 1</MenuItem>
+                        <MenuItem value={20}>grupos 2</MenuItem>
+                        <MenuItem value={30}>grupos 3</MenuItem>
+                      </Select>
+                    </FormControl>
+                  </div>
+
+                  <div className="w-[60%] flex items-center gap-3">
+                    <TextField
+                      fullWidth
+                      size="small"
+                      id="outlined-basic"
+                      variant="outlined"
+                      placeholder="digite o nome ou cpf do(s) usuário(s)"
+                      sx={{ fontSize: "12px" }}
+                    />
+                    <p className="px-4 py-2 bg-green-300 rounded-lg hover:bg-red-100 active:bg-red-300 cursor-pointer hover:shadow-lg select-none">
+                      adicionar
+                    </p>
+                  </div>
+                  <p className="text-xs text-gray-500">
+                    separe por vírgula cada usuário para que seja enviado
+                    separadamente
+                  </p>
+                </div>
+              </div>
             ) : (
               <div>Próximo</div>
             )}
