@@ -15,7 +15,7 @@ const Notifications = () => {
         <p className="font-semibold my-3">Visão geral</p>
         <p className="my-3 text-sm">Últimos 30 dias</p>
       </div>
-      <div className="flex gap-3">
+      <div className="flex flex-col md:flex-row gap-3">
         <Card
           name="Receita Total"
           amount="R$153.009,89"
@@ -40,7 +40,7 @@ const Notifications = () => {
 
       {/* notifications  start */}
 
-      <div className="py-5 flex justify-between">
+      <div className="py-5 flex flex-col md:flex-row md:justify-between">
         <div
           className="w-[30%] flex items-center hover:text-blue-500 cursor-pointer"
           onClick={() => router.back()}
@@ -48,7 +48,7 @@ const Notifications = () => {
           <ArrowBackIosIcon fontSize="small" />
           <p className="font-semibold text-xl">Notificações</p>
         </div>
-        <div className="w-[70%] flex text-sm gap-2">
+        <div className="mt-4 md:mt-0 w-[70%] flex text-sm gap-2">
           <SingleButton name="Email" />
           <SingleButton name="Push" />
           <SingleButton name="SMS" />
@@ -59,13 +59,13 @@ const Notifications = () => {
       {/* notifications  end */}
 
       {/* canis start  */}
-      <div className="my-8">
+      <div className="my-5 md:my-8">
         <h1 className="font-semibold">Canais</h1>
         <p className="text-sm text-gray-600">
           Escolha um canal e crie suas notificações
         </p>
 
-        <div className="py-3 flex gap-5">
+        <div className="py-3 flex flex-col md:flex-row gap-5">
           <CanaisCard name="Email" />
           <CanaisCard name="Push" />
           <CanaisCard name="SMS" />
