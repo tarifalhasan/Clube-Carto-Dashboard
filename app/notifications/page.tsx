@@ -3,6 +3,7 @@
 import CanaisCard from "@/components/common/notifications/CanaisCard";
 import Card from "@/components/common/notifications/Card";
 import SingleButton from "@/components/common/notifications/SingleButton";
+import StartNav from "@/components/common/notifications/StartNav";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { useRouter } from "next/navigation";
 
@@ -40,21 +41,7 @@ const Notifications = () => {
 
       {/* notifications  start */}
 
-      <div className="py-5 flex flex-col md:flex-row md:justify-between">
-        <div
-          className="w-[30%] flex items-center hover:text-blue-500 cursor-pointer"
-          onClick={() => router.back()}
-        >
-          <ArrowBackIosIcon fontSize="small" />
-          <p className="font-semibold text-xl">Notificações</p>
-        </div>
-        <div className="mt-4 md:mt-0 w-[70%] flex text-sm gap-2">
-          <SingleButton name="Email" />
-          <SingleButton name="Push" />
-          <SingleButton name="SMS" />
-          <SingleButton name="Chat" />
-        </div>
-      </div>
+      <StartNav name="Notificações" />
 
       {/* notifications  end */}
 
