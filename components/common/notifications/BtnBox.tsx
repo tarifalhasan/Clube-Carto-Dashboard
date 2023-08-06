@@ -2,6 +2,9 @@
 
 import React from "react";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
+import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
+import MarkChatUnreadOutlinedIcon from "@mui/icons-material/MarkChatUnreadOutlined";
 
 function BtnBox({
   id,
@@ -23,7 +26,15 @@ function BtnBox({
       }
       onClick={() => toggle(id)}
     >
-      <EmailOutlinedIcon />
+      {name === "Email" ? (
+        <EmailOutlinedIcon />
+      ) : name === "Push" ? (
+        <NotificationsActiveOutlinedIcon />
+      ) : name === "SMS" ? (
+        <SmsOutlinedIcon />
+      ) : (
+        <MarkChatUnreadOutlinedIcon />
+      )}
       <p>{name}</p>
       <p
         className={
