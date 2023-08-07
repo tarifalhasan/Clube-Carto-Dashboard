@@ -22,23 +22,24 @@ const SubHeader: React.FC<Props> = ({ href, name, buttonsData, title }) => {
   };
 
   return (
-    <div className=" flex items-center gap-4">
-      <div className="flex items-center">
+    <div className="flex  justify-between items-center gap-3 ">
+      <div className="max-w-[18%] flex items-center cursor-pointer">
         <Link href={href}>
           <MdKeyboardArrowLeft size={24} />
         </Link>
-        <h2 className=" text-5xl text-skin-gray-950 font-normal">
+        <h2 className=" text-lg text-skin-gray-950 font-semibold">
           {name || title}
         </h2>
       </div>
-      <div className=" hidden lg:flex items-center gap-4">
+      <div className=" flex flex-wrap gap-3">
         {buttonsData?.map((data, index) => (
           <Button
             onClick={() => handleClickLink(data.href)}
             key={index}
             variant={"primary"}
+            className="flex items-center"
           >
-            <span>{data.name}</span>
+            <span className="text-sm">{data.name}</span>
             <IoIosArrowForward />
           </Button>
         ))}

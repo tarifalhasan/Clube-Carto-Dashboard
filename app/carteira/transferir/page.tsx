@@ -47,8 +47,8 @@ const AdicionarSaldo = () => {
   return (
     <>
       <SubHeader
-        title="Adicionar saldo"
-        href="adicionar-saldo"
+        title="Transferir"
+        href="transferir"
         buttonsData={carteira_routes}
       />
       <div className=" text-4xl flex items-center gap-2">

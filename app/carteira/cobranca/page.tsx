@@ -2,16 +2,16 @@ import SubHeader from "@/components/sub-header";
 import { carteira_routes } from "@/constant/carteira";
 import React from "react";
 
-function MinhasTaxas() {
+function Cobranca() {
   return (
     <div>
       <SubHeader
-        href="/minhas_taxas"
-        name="Minhas taxas"
+        href="/cobranca"
+        name="Cobrança"
         buttonsData={carteira_routes}
       />
     </div>
   );
 }
 
-export default MinhasTaxas;
+export default Cobranca;
