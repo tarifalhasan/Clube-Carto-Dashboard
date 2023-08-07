@@ -4,9 +4,11 @@ import pig from "@/assets/images/pig.svg";
 import React from "react";
 import Image from "next/image";
 
+import RetirarSection from "@/components/common/retirar/RetirarSection";
+
 function Retirar() {
   return (
-    <div>
+    <div className="pb-5">
       <SubHeader href="/retirar" name="Retirar" buttonsData={carteira_routes} />
 
       <div className="my-8 flex justify-between items-center">
@@ -17,7 +19,7 @@ function Retirar() {
         </p>
       </div>
 
-      <div className="border-2 border-gray-200 rounded-md p-5">hi</div>
+      <RetirarSection />
     </div>
   );
 }
