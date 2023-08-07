@@ -120,10 +120,10 @@ function TermaniasTable() {
           </div>
           <p className="text-[#569A59] text-sm">Total de registros: 3</p>
         </div>
-        <div className="flex justify-end items-center">
-          <div className="flex justify-end gap-2">
+        <div className="flex justify-end">
+          <div className="flex justify-end items-center gap-2">
             <p className="text-sm">Página 1 de 1</p>
-            <Pagination count={0} showFirstButton showLastButton />
+            <Pagination count={1} showFirstButton showLastButton />
           </div>
         </div>
       </div>
