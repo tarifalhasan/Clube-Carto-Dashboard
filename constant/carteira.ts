@@ -10,12 +10,20 @@ const carteira_routes: sidebarNavigationType[] = [
     href: "transferir",
   },
   {
+    name: "Terminais",
+    href: "terminais",
+  },
+  {
     name: "Retirar",
     href: "retirar",
   },
   {
     name: "Cobrança",
     href: "cobrança",
+  },
+  {
+    name: "Emita uma cobrança",
+    href: "emita_uma",
   },
   {
     name: "Produtos",
@@ -26,8 +34,8 @@ const carteira_routes: sidebarNavigationType[] = [
     href: "reports",
   },
   {
-    name: "Mais utilizados",
-    href: "minhastaxas",
+    name: "Minhas taxas",
+    href: "minhas_taxas",
   },
 ];
 
