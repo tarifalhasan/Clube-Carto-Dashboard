@@ -7,6 +7,7 @@ import {
   InputLabel,
   MenuItem,
   OutlinedInput,
+  Pagination,
   Select,
 } from "@mui/material";
 import wallet from "@/assets/images/wallet.svg";
@@ -15,6 +16,7 @@ import SendIcon from "@mui/icons-material/Send";
 import SearchIcon from "@mui/icons-material/Search";
 import React, { useState } from "react";
 import Image from "next/image";
+import TableRow from "./TableRow";
 
 function TermaniasTable() {
   const [age, setAge] = useState("");
@@ -30,7 +32,7 @@ function TermaniasTable() {
           <IconButton aria-label="delete">
             <FilterAltOutlinedIcon />
           </IconButton>
-          <FormControl sx={{ width: "15ch" }} variant="outlined" size="medium">
+          <FormControl sx={{ width: "15ch" }} variant="outlined">
             <OutlinedInput
               id="outlined-adornment-password"
               type="text"
@@ -57,9 +59,15 @@ function TermaniasTable() {
         <div className="w-[70%]">
           <FormControl fullWidth size="small">
             <InputLabel id="demo-simple-select-label">
-              <div className="flex items-center gap-2">
-                <Image src={wallet} alt="wallet" height={30} width={30} />
-                Selecione o seu terminal
+              <div className="flex items-center gap-2 relative">
+                <Image
+                  src={wallet}
+                  alt="wallet"
+                  height={30}
+                  width={30}
+                  className="absolute left-0"
+                />
+                <p className="ml-10">Selecione o seu terminal</p>
               </div>
             </InputLabel>
             <Select
@@ -74,6 +82,49 @@ function TermaniasTable() {
               <MenuItem value={30}>Thirty</MenuItem>
             </Select>
           </FormControl>
+        </div>
+
+        <div className="mt-8 flex flex-col gap-3">
+          <div className="w-full flex justify-between bg-[#1A932E2E] py-2 px-4 rounded-lg">
+            <span>NOME</span>
+            <span>CÓDIGO</span>
+            <span>SUPERVISOR</span>
+            <span>PERMISSÃO RETIRADA</span>
+          </div>
+          <TableRow />
+          <TableRow />
+          <TableRow />
+          <TableRow />
+        </div>
+      </div>
+
+      <div className="flex justify-between items-center">
+        <div className="w-[50%] flex items-center gap-2">
+          <div className="w-[40%]">
+            <FormControl fullWidth size="small">
+              <InputLabel id="demo-simple-select-label">
+                <p className="text-sm ">10 Registros por página</p>
+              </InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={age}
+                label="Selecione o seu terminal"
+                onChange={handleChange}
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </FormControl>
+          </div>
+          <p className="text-[#569A59] text-sm">Total de registros: 3</p>
+        </div>
+        <div className="flex justify-end items-center">
+          <div className="flex justify-end gap-2">
+            <p className="text-sm">Página 1 de 1</p>
+            <Pagination count={0} showFirstButton showLastButton />
+          </div>
         </div>
       </div>
     </div>
