@@ -1,17 +1,27 @@
+"use client";
+
 import {
-  Button,
   FormControl,
   IconButton,
   InputAdornment,
   InputLabel,
+  MenuItem,
   OutlinedInput,
+  Select,
 } from "@mui/material";
+import wallet from "@/assets/images/wallet.svg";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import SendIcon from "@mui/icons-material/Send";
 import SearchIcon from "@mui/icons-material/Search";
-import React from "react";
+import React, { useState } from "react";
+import Image from "next/image";
 
 function TermaniasTable() {
+  const [age, setAge] = useState("");
+
+  const handleChange = (event: any) => {
+    setAge(event.target.value);
+  };
   return (
     <div className="py-8">
       <div className="flex justify-between">
@@ -40,15 +50,30 @@ function TermaniasTable() {
               <SendIcon />
             </span>
           </p>
-          {/* <div>
-            <Button
-              variant="contained"
-              endIcon={<SendIcon />}
-              className="bg-green-600"
+        </div>
+      </div>
+
+      <div className="my-5 p-5 border border-gray-200 rounded-lg">
+        <div className="w-[70%]">
+          <FormControl fullWidth size="small">
+            <InputLabel id="demo-simple-select-label">
+              <div className="flex items-center gap-2">
+                <Image src={wallet} alt="wallet" height={30} width={30} />
+                Selecione o seu terminal
+              </div>
+            </InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={age}
+              label="Selecione o seu terminal"
+              onChange={handleChange}
             >
-              Send
-            </Button>
-          </div> */}
+              <MenuItem value={10}>Ten</MenuItem>
+              <MenuItem value={20}>Twenty</MenuItem>
+              <MenuItem value={30}>Thirty</MenuItem>
+            </Select>
+          </FormControl>
         </div>
       </div>
     </div>
