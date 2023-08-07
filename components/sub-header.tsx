@@ -22,8 +22,8 @@ const SubHeader: React.FC<Props> = ({ href, name, buttonsData, title }) => {
   };
 
   return (
-    <div className="flex  justify-between items-center gap-3 ">
-      <div className="max-w-[18%] flex items-center cursor-pointer">
+    <div className="hidden md:flex  justify-between items-center gap-3 ">
+      <div className="md:max-w-[18%] flex items-center cursor-pointer">
         <Link href={href}>
           <MdKeyboardArrowLeft size={24} />
         </Link>

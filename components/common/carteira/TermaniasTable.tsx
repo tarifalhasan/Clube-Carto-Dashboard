@@ -1,10 +1,12 @@
 "use client";
 
 import {
+  Button,
   FormControl,
   IconButton,
   InputAdornment,
   InputLabel,
+  Menu,
   MenuItem,
   OutlinedInput,
   Pagination,
@@ -19,6 +21,15 @@ import Image from "next/image";
 import TableRow from "./TableRow";
 
 function TermaniasTable() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
   const [age, setAge] = useState("");
 
   const handleChange = (event: any) => {
@@ -26,12 +37,29 @@ function TermaniasTable() {
   };
   return (
     <div className="py-8">
-      <div className="flex justify-between">
-        <h2 className="font-semibold">Veja os seus Terminais</h2>
-        <div className="flex">
-          <IconButton aria-label="delete">
-            <FilterAltOutlinedIcon />
-          </IconButton>
+      <div className="flex flex-col md:flex-row justify-between">
+        <h2 className="font-semibold text-sm md:text-base">
+          Veja os seus Terminais
+        </h2>
+        <div className="flex items-center gap-2">
+          <div>
+            <IconButton aria-label="delete" onClick={handleClick}>
+              <FilterAltOutlinedIcon />
+            </IconButton>
+            <Menu
+              id="basic-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              MenuListProps={{
+                "aria-labelledby": "basic-button",
+              }}
+            >
+              <MenuItem onClick={handleClose}>Price Low to High</MenuItem>
+              <MenuItem onClick={handleClose}>ligh to Low</MenuItem>
+              <MenuItem onClick={handleClose}>max of stock</MenuItem>
+            </Menu>
+          </div>
           <FormControl sx={{ width: "15ch" }} variant="outlined">
             <OutlinedInput
               id="outlined-adornment-password"
@@ -46,7 +74,7 @@ function TermaniasTable() {
               }
             />
           </FormControl>
-          <p className="px-4 bg-green-600 flex items-center rounded-full ml-2 text-sm hover:bg-green-700 text-white cursor-pointer select-none">
+          <p className="px-4 py-2 bg-green-600 flex items-center rounded-full  text-sm hover:bg-green-700 text-white cursor-pointer select-none">
             EXPORTAR
             <span className="ml-1 text-white">
               <SendIcon />
@@ -56,7 +84,7 @@ function TermaniasTable() {
       </div>
 
       <div className="my-5 p-5 border border-gray-200 rounded-lg">
-        <div className="w-[70%]">
+        <div className="w-full md:w-[70%]">
           <FormControl fullWidth size="small">
             <InputLabel id="demo-simple-select-label">
               <div className="flex items-center gap-2 relative">
@@ -84,12 +112,12 @@ function TermaniasTable() {
           </FormControl>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3">
-          <div className="w-full flex justify-between bg-[#1A932E2E] py-2 px-4 rounded-lg">
-            <span>NOME</span>
-            <span>CÓDIGO</span>
-            <span>SUPERVISOR</span>
-            <span>PERMISSÃO RETIRADA</span>
+        <div className="mt-8 flex flex-col gap-3 overflow-hidden">
+          <div className="w-full flex justify-between bg-[#1A932E2E] py-2 px-4 rounded-lg overflow-auto">
+            <span className="mx-3 md:mx-0">NOME</span>
+            <span className="mx-3 md:mx-0">CÓDIGO</span>
+            <span className="mx-3 md:mx-0">SUPERVISOR</span>
+            <span className="mx-3 md:mx-0">PERMISSÃO RETIRADA</span>
           </div>
           <TableRow />
           <TableRow />
@@ -98,9 +126,9 @@ function TermaniasTable() {
         </div>
       </div>
 
-      <div className="flex justify-between items-center">
-        <div className="w-[50%] flex items-center gap-2">
-          <div className="w-[40%]">
+      <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-2">
+        <div className="w-full md:w-[50%] flex items-center gap-2">
+          <div className="w-[60%] md:w-[40%]">
             <FormControl fullWidth size="small">
               <InputLabel id="demo-simple-select-label">
                 <p className="text-sm ">10 Registros por página</p>
@@ -120,10 +148,10 @@ function TermaniasTable() {
           </div>
           <p className="text-[#569A59] text-sm">Total de registros: 3</p>
         </div>
-        <div className="flex justify-end items-center">
-          <div className="flex justify-end gap-2">
+        <div className="flex justify-end">
+          <div className="flex justify-end items-center gap-2">
             <p className="text-sm">Página 1 de 1</p>
-            <Pagination count={0} showFirstButton showLastButton />
+            <Pagination count={1} showFirstButton showLastButton />
           </div>
         </div>
       </div>
