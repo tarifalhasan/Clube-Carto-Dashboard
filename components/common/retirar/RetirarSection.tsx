@@ -27,24 +27,29 @@ function RetirarSection() {
 
         <div className="my-5 flex flex-col md:flex-row items-center gap-5">
           <div>
+            <p>De</p>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker />
             </LocalizationProvider>
           </div>
           <div>
+            <p>Até</p>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
               <DatePicker />
             </LocalizationProvider>
           </div>
-          <TextField
-            size="small"
-            id="outlined-basic"
-            type="number"
-            label="Todos"
-            variant="outlined"
-          />
+          <div>
+            <p>Status</p>
+            <TextField
+              size="small"
+              id="outlined-basic"
+              type="number"
+              label="Todos"
+              variant="outlined"
+            />
+          </div>
           <div className="flex items-center">
-            <p className="py-1 px-3 rounded-full bg-[#74EEAE] flex items-center hover:bg-green-500 active:bg-green-600 cursor-pointer select-none">
+            <p className="mt-5 py-1 px-3 rounded-full bg-[#74EEAE] flex items-center hover:bg-green-500 active:bg-green-600 cursor-pointer select-none">
               Pesquisar
             </p>
           </div>
