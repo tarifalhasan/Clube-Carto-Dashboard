@@ -35,6 +35,7 @@ import {
 } from "@mui/material";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import Image from "next/image";
+import MapComponent from "@/components/common/notifications/MapComponent";
 
 const toolbarOptions = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }], // Header options
@@ -557,6 +558,13 @@ function Email() {
                       />
                       <p className="w-[18%]">50 km</p>
                     </div>
+                  </div>
+
+                  <div>
+                    <h1 className="text-lg font-semibold mb-4">
+                      Google Maps Location
+                    </h1>
+                    <MapComponent />
                   </div>
                 </div>
               </div>
