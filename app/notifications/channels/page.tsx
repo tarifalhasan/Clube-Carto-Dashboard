@@ -10,19 +10,27 @@ import phone3 from "@/assets/images/phone/phone3.png";
 import vector from "@/assets/images/Vector.svg";
 import character from "@/assets/images/character.svg";
 import StartNav from "@/components/common/notifications/StartNav";
+import CloseIcon from "@mui/icons-material/Close";
 import BtnBox from "@/components/common/notifications/BtnBox";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
 import {
+  Button,
+  FilledInput,
   FormControl,
   FormControlLabel,
+  IconButton,
   Input,
+  InputAdornment,
   InputLabel,
   MenuItem,
+  NativeSelect,
+  OutlinedInput,
   Radio,
   RadioGroup,
   Select,
+  Slider,
   TextField,
 } from "@mui/material";
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
@@ -420,37 +428,137 @@ function Email() {
               </div>
             ) : pushBtn === 3 ? (
               <div className="my-3 p-5 border border-gray-300 rounded-md flex flex-col md:flex-row justify-between">
-                <div className="w-full md:w-[50%] flex flex-col gap-4">
+                <div className="w-full  flex flex-col gap-4">
                   <p className="w-[80%]">
                     Publique para um público específico por geolocalização
                   </p>
 
-                  <TextField
-                    fullWidth
-                    size="small"
+                  <FormControl
+                    sx={{ width: "32ch" }}
                     variant="outlined"
-                    id="outlined-basic"
-                    label="Imagem do estabelecimento"
-                  />
-                  <p className="font-semibold text-gray-500 mb-2">
-                    Página de notificação
-                  </p>
-                  <TextField
-                    fullWidth
                     size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Título da página"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Título da notificação"
-                  />
+                  >
+                    <InputLabel htmlFor="outlined-adornment-password">
+                      digite o cpf ou um grupo
+                    </InputLabel>
+                    <OutlinedInput
+                      id="outlined-adornment-password"
+                      type="text"
+                      endAdornment={
+                        <InputAdornment position="end">
+                          <div className="flex items-center">
+                            <p className="h-8 bg-gray-600 w-px mx-4"></p>
+                            <p>Procurar</p>
+                          </div>
+                        </InputAdornment>
+                      }
+                      label="digite o cpf ou um grupo"
+                    />
+                  </FormControl>
+                  <div className="flex flex-wrap gap-3">
+                    <div className="py-1 px-3 rounded-full bg-green-400 flex items-center gap-1">
+                      <p>grupo selecionado</p>
+                      <IconButton aria-label="delete">
+                        <CloseIcon />
+                      </IconButton>
+                    </div>
+                    <div className="py-1 px-3 rounded-full bg-green-400 flex items-center gap-1">
+                      <p>CPF selecionado</p>
+                      <IconButton aria-label="delete">
+                        <CloseIcon />
+                      </IconButton>
+                    </div>
+                  </div>
+
+                  <div className="mb-5">
+                    <h3 className="font-medium text-lg">Idade</h3>
+                    <div className="w-[30%] flex justify-start gap-5">
+                      <FormControl fullWidth size="small">
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={age}
+                          onChange={handleChange}
+                        >
+                          <NativeSelect
+                            defaultValue={22}
+                            inputProps={{
+                              name: "age",
+                              id: "uncontrolled-native",
+                            }}
+                          ></NativeSelect>
+                          <MenuItem value={10}>24</MenuItem>
+                          <MenuItem value={20}>50</MenuItem>
+                          <MenuItem value={30}>80</MenuItem>
+                        </Select>
+                      </FormControl>
+                      <FormControl fullWidth size="small">
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value={age}
+                          onChange={handleChange}
+                        >
+                          <NativeSelect
+                            defaultValue={22}
+                            inputProps={{
+                              name: "age",
+                              id: "uncontrolled-native",
+                            }}
+                          ></NativeSelect>
+                          <MenuItem value={10}>24</MenuItem>
+                          <MenuItem value={20}>50</MenuItem>
+                          <MenuItem value={30}>80</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </div>
+                  </div>
+
+                  <div className="mb-5">
+                    <h3 className="font-medium text-lg">Gênero</h3>
+                    <div className="flex gap-3 mt-2">
+                      <p className="py-1 px-3 rounded-lg bg-green-400">Todos</p>
+                      <p className="py-1 px-3 rounded-lg">Masculino</p>
+                      <p className="py-1 px-3 rounded-lg">Feminino</p>
+                    </div>
+                  </div>
+                  <div className="mb-5">
+                    <h3 className="font-medium text-lg">Locais</h3>
+                    <div className="w-[40%] flex gap-3 mt-2">
+                      <FormControl fullWidth>
+                        <InputLabel id="demo-simple-select-label">
+                          Todos nesta localização
+                        </InputLabel>
+                        <Select
+                          labelId="demo-simple-select-label"
+                          id="demo-simple-select"
+                          value=""
+                          onChange={handleChange}
+                        >
+                          <MenuItem value={10}>24</MenuItem>
+                          <MenuItem value={20}>50</MenuItem>
+                          <MenuItem value={30}>80</MenuItem>
+                        </Select>
+                      </FormControl>
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="font-medium text-lg">Raio de alcanse</h3>
+                    <div className="my-3 w-[70%] flex items-center gap-3">
+                      <p className="w-[15%]">0 km</p>
+                      <Slider
+                        defaultValue={20}
+                        aria-label="Default"
+                        valueLabelDisplay="auto"
+                        min={0}
+                        max={50}
+                        color="secondary"
+                      />
+                      <p className="w-[18%]">50 km</p>
+                    </div>
+                  </div>
                 </div>
-                <div></div>
               </div>
             ) : pushBtn === 4 ? (
               <div className="my-3 p-5 border border-gray-300 rounded-md flex justify-center gap-8">
