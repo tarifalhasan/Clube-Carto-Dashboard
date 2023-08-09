@@ -24,6 +24,7 @@ import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 
 function Emita() {
+  const [count, setCount] = React.useState(0);
   return (
     <div className="rounded-md border border-gray-200 p-5">
       <h2 className="text-xl font-semibold">Escolha o tipo de cobrança</h2>
@@ -135,13 +136,26 @@ function Emita() {
           </div>
           <div className="w-full md:w-[50%] flex justify-between items-center py-2 px-3 border border-blue-200 rounded-lg">
             <InputAdornment position="start">
-              <IconButton aria-label="delete">
+              <IconButton
+                aria-label="delete"
+                onClick={() => setCount((prevState: number) => prevState + 1)}
+              >
                 <AddIcon />
               </IconButton>
             </InputAdornment>
-            <p>1</p>
+            <p>{count}</p>
             <InputAdornment position="start">
-              <IconButton aria-label="delete">
+              <IconButton
+                aria-label="delete"
+                onClick={() =>
+                  setCount((prevState: number) => {
+                    if (prevState > 0) {
+                      return prevState - 1;
+                    }
+                    return prevState;
+                  })
+                }
+              >
                 <RemoveIcon />
               </IconButton>
             </InputAdornment>
