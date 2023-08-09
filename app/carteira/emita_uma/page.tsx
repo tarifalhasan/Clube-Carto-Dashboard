@@ -15,6 +15,8 @@ import boleto from "@/assets/images/boleto.svg";
 import Image from "next/image";
 import SearchIcon from "@mui/icons-material/Search";
 import CloseIcon from "@mui/icons-material/Close";
+import AddIcon from "@mui/icons-material/Add";
+import RemoveIcon from "@mui/icons-material/Remove";
 
 function emita_uma_cobrança() {
   return (
@@ -111,7 +113,7 @@ function emita_uma_cobrança() {
             Busque pelo nome do item de cobrança
           </p>
         </div>
-        <div className="border border-gray-200 p-5 flex justify-between">
+        <div className="border border-gray-200 p-6 flex justify-between rounded-md mt-5">
           <div className="">
             <h3>Descrição do item</h3>
             <p className="text-xs">Lorem ipsum </p>
@@ -132,13 +134,17 @@ function emita_uma_cobrança() {
                 label="digite o cpf ou um grupo"
               />
             </FormControl>
-            <div className="w-full py-1 px-3 border border-blue-200 rounded-lg">
+            <div className="w-[50%] flex justify-between items-center py-2 px-3 border border-blue-200 rounded-lg">
               <InputAdornment position="start">
-                <IconButton aria-label="delete">+</IconButton>
+                <IconButton aria-label="delete">
+                  <AddIcon />
+                </IconButton>
               </InputAdornment>
               <p>1</p>
               <InputAdornment position="start">
-                <IconButton aria-label="delete">-</IconButton>
+                <IconButton aria-label="delete">
+                  <RemoveIcon />
+                </IconButton>
               </InputAdornment>
             </div>
           </div>
