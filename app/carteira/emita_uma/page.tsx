@@ -113,7 +113,7 @@ function emita_uma_cobrança() {
             Busque pelo nome do item de cobrança
           </p>
         </div>
-        <div className="border border-gray-200 p-6 flex justify-between rounded-md mt-5">
+        <div className="border border-gray-200 p-6 flex justify-between rounded-md my-5">
           <div className="">
             <h3>Descrição do item</h3>
             <p className="text-xs">Lorem ipsum </p>
