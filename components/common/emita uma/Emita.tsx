@@ -31,7 +31,7 @@ function Emita() {
         Busque por nome, e-mail, celular, CPF, CNPJ, grupo de clientes
       </p>
 
-      <div className="my-5 flex gap-5">
+      <div className="my-5 flex flex-wrap gap-5">
         <div className="flex justify-between items-center gap-5 px-3 py-2 border border-gray-200 rounded-lg">
           <Image src={boleto} alt="boleto" height={30} width={30} />
           <p className="font-bold">Boleto bancário</p>
@@ -59,8 +59,8 @@ function Emita() {
         </p>
       </div>
 
-      <div className="pb-5">
-        <FormControl sx={{ width: "32ch" }} variant="outlined" size="small">
+      <div className="pb-5 w-[90%] md:w-[40%]">
+        <FormControl fullWidth variant="outlined" size="small">
           <InputLabel htmlFor="outlined-adornment-password">
             Cliente*
           </InputLabel>
@@ -87,8 +87,8 @@ function Emita() {
         </p>
       </div>
 
-      <div className="pb-5">
-        <FormControl sx={{ width: "32ch" }} variant="outlined" size="small">
+      <div className="pb-5 w-[90%] md:w-[40%]">
+        <FormControl fullWidth variant="outlined" size="small">
           <InputLabel htmlFor="outlined-adornment-password">Item*</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
@@ -111,26 +111,29 @@ function Emita() {
           Busque pelo nome do item de cobrança
         </p>
       </div>
-      <div className="border border-gray-200 p-6 flex justify-between rounded-md my-5">
+      <div className="border border-gray-200 p-6 flex flex-col md:flex-row justify-between rounded-md my-5 gap-3 md:gap-0">
         <div className="">
           <h3>Descrição do item</h3>
           <p className="text-xs">Lorem ipsum </p>
         </div>
-        <div className="w-[70%] flex gap-5">
-          <FormControl sx={{ width: "32ch" }} variant="outlined" size="small">
-            <InputLabel htmlFor="outlined-adornment-password">Item*</InputLabel>
-            <OutlinedInput
-              id="outlined-adornment-password"
-              type="text"
-              endAdornment={
-                <InputAdornment position="start">
-                  <p>R$</p>
-                </InputAdornment>
-              }
-              label="digite o cpf ou um grupo"
-            />
-          </FormControl>
-          <div className="w-[50%] flex justify-between items-center py-2 px-3 border border-blue-200 rounded-lg">
+        <div className="w-[70%] flex flex-col md:flex-row gap-3 md:gap-5">
+          <div className="w-full md:w-[50%]">
+            <FormControl fullWidth variant="outlined" size="small">
+              <InputLabel htmlFor="outlined-adornment-password">
+                Item*
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-password"
+                type="text"
+                startAdornment={
+                  <InputAdornment position="start">
+                    <p>R$</p>
+                  </InputAdornment>
+                }
+              />
+            </FormControl>
+          </div>
+          <div className="w-full md:w-[50%] flex justify-between items-center py-2 px-3 border border-blue-200 rounded-lg">
             <InputAdornment position="start">
               <IconButton aria-label="delete">
                 <AddIcon />
@@ -154,8 +157,8 @@ function Emita() {
         <p className="text-xs">Desconto sobre os itens</p>
       </div>
 
-      <div className="pb-5 w-[60%] flex  text-center">
-        <select className="w-[15%] p-2 flex bg-[#353A40] text-white rounded-l-lg">
+      <div className="pb-5 w-[90%] md:w-[60%] flex  text-center">
+        <select className="md:w-[15%] p-2 flex bg-[#353A40] text-white rounded-l-lg">
           <option>R $</option>
           <option>US $</option>
           <option>CAD $</option>
@@ -174,10 +177,10 @@ function Emita() {
           antes da data de vencimento
         </p>
         <p className="text-xs">Observação</p>
-        <div className="py-5 items-center flex gap-10">
+        <div className="py-5  flex flex-col md:flex-row gap-3 md:gap-10">
           <div className="flex items-center">
-            <div className="mt-2 pb-5 flex text-center">
-              <select className="w-[25%] p-2 flex bg-[#353A40] text-white rounded-l-lg">
+            <div className="mt-2  flex text-center">
+              <select className=" p-2 flex bg-[#353A40] text-white rounded-l-lg">
                 <option>R $</option>
                 <option>US $</option>
                 <option>CAD $</option>
@@ -203,7 +206,7 @@ function Emita() {
           </p>
           <p className="text-sm">A observação aparece no e-mail da cobrança</p>
 
-          <div className="w-[70%] my-6">
+          <div className="w-full md:w-[70%] my-6">
             <TextField
               fullWidth
               id="outlined-textarea"
@@ -218,7 +221,7 @@ function Emita() {
           </div>
         </div>
       </div>
-      <div className="mt-5 w-[40%]">
+      <div className="mt-5 w-[70%] md:w-[40%]">
         <Button fullWidth variant="outlined" color="success">
           Emitir cobrança
         </Button>
