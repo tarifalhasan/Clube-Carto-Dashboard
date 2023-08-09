@@ -473,7 +473,7 @@ function Email() {
 
                   <div className="mb-5">
                     <h3 className="font-medium text-lg">Idade</h3>
-                    <div className="w-[30%] flex justify-start gap-5">
+                    <div className="w-[60%] md:w-[25%] flex justify-start gap-5">
                       <FormControl fullWidth size="small">
                         <Select
                           labelId="demo-simple-select-label"
@@ -481,16 +481,15 @@ function Email() {
                           value={age}
                           onChange={handleChange}
                         >
-                          <NativeSelect
-                            defaultValue={22}
-                            inputProps={{
-                              name: "age",
-                              id: "uncontrolled-native",
-                            }}
-                          ></NativeSelect>
-                          <MenuItem value={10}>24</MenuItem>
-                          <MenuItem value={20}>50</MenuItem>
-                          <MenuItem value={30}>80</MenuItem>
+                          <MenuItem value={10}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
+                          <MenuItem value={20}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
+                          <MenuItem value={30}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
                         </Select>
                       </FormControl>
                       <FormControl fullWidth size="small">
@@ -500,16 +499,15 @@ function Email() {
                           value={age}
                           onChange={handleChange}
                         >
-                          <NativeSelect
-                            defaultValue={22}
-                            inputProps={{
-                              name: "age",
-                              id: "uncontrolled-native",
-                            }}
-                          ></NativeSelect>
-                          <MenuItem value={10}>24</MenuItem>
-                          <MenuItem value={20}>50</MenuItem>
-                          <MenuItem value={30}>80</MenuItem>
+                          <MenuItem value={10}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
+                          <MenuItem value={20}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
+                          <MenuItem value={30}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
                         </Select>
                       </FormControl>
                     </div>
@@ -543,10 +541,9 @@ function Email() {
                       </FormControl>
                     </div>
                   </div>
-
                   <div>
                     <h3 className="font-medium text-lg">Raio de alcanse</h3>
-                    <div className="my-3 w-[70%] flex items-center gap-3">
+                    <div className="my-3 w-[70%] md:w-[50%] flex items-center gap-3">
                       <p className="w-[15%]">0 km</p>
                       <Slider
                         defaultValue={20}
