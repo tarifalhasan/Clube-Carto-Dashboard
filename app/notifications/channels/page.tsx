@@ -406,7 +406,7 @@ function Email() {
                   </p>
 
                   <div>
-                    <p>Imagem do estabelecimento</p>
+                    <p className="text-sm">Imagem do estabelecimento</p>
                     <input
                       type="text"
                       id="first_name"
@@ -420,7 +420,7 @@ function Email() {
                   </p>
 
                   <div>
-                    <p>Título da página</p>
+                    <p className="text-sm">Título da página</p>
                     <input
                       type="text"
                       id="first_name"
@@ -430,7 +430,7 @@ function Email() {
                   </div>
 
                   <div>
-                    <p>Título da notificação</p>
+                    <p className="text-sm">Título da notificação</p>
                     <input
                       type="text"
                       id="first_name"
@@ -440,7 +440,7 @@ function Email() {
                   </div>
 
                   <div>
-                    <p>Descrição da notificação</p>
+                    <p className="text-sm">Descrição da notificação</p>
                     <input
                       type="text"
                       id="first_name"
@@ -449,7 +449,9 @@ function Email() {
                     />
                   </div>
                   <div>
-                    <p>Código para copiar dentro da notificação</p>
+                    <p className="text-sm">
+                      Código para copiar dentro da notificação
+                    </p>
                     <input
                       type="text"
                       id="first_name"
@@ -458,7 +460,7 @@ function Email() {
                     />
                   </div>
                   <div>
-                    <p>Regras do desconto</p>
+                    <p className="text-sm">Regras do desconto</p>
                     <input
                       type="text"
                       id="first_name"
@@ -467,7 +469,9 @@ function Email() {
                     />
                   </div>
                   <div>
-                    <p>Botão de redirecionamento dentro do aplicativo</p>
+                    <p className="text-sm">
+                      Botão de redirecionamento dentro do aplicativo
+                    </p>
                     <p className="text-xs">
                       (para uma pagina dentro ou fora do app)
                     </p>
@@ -479,7 +483,9 @@ function Email() {
                     />
                   </div>
                   <div>
-                    <p>Texto do botão de redirecionamento</p>
+                    <p className="text-sm">
+                      Texto do botão de redirecionamento
+                    </p>
                     <input
                       type="text"
                       id="first_name"
