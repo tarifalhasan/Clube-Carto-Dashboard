@@ -405,65 +405,88 @@ function Email() {
                     Agora vamos para a telado aplicativo seu cliente
                   </p>
 
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Imagem do estabelecimento"
-                  />
-                  <p className="font-semibold text-gray-500 mb-2">
+                  <div>
+                    <p>Imagem do estabelecimento</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <p className="font-semibold text-[#353A40] mb-2">
                     Página de notificação
                   </p>
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Título da página"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Título da notificação"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Descrição da notificação"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Código para copiar dentro da notificação"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Regras do desconto"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Botão de redirecionamento dentro do aplicativo (para uma pagina dentro ou fora do app)"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Texto do botão de redirecionamento"
-                  />
+
+                  <div>
+                    <p>Título da página</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <p>Título da notificação</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <p>Descrição da notificação</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <p>Código para copiar dentro da notificação</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <p>Regras do desconto</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <p>Botão de redirecionamento dentro do aplicativo</p>
+                    <p className="text-xs">
+                      (para uma pagina dentro ou fora do app)
+                    </p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <p>Texto do botão de redirecionamento</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
                 </div>
                 <div>
                   <Image src={phone2} alt="phone2" height={230} width={230} />
