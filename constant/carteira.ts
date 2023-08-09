@@ -18,10 +18,6 @@ const carteira_routes: sidebarNavigationType[] = [
     href: "retirar",
   },
   {
-    name: "Cobrança",
-    href: "cobranca",
-  },
-  {
     name: "Produtos",
     href: "produtos",
   },
