@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useContext } from "react";
 import { GlobalStates } from "@/app/context";
 import imgEnviado from "@/assets/images/enviado.svg";
+import logo from "@/assets/images/logo.svg";
 import phone1 from "@/assets/images/phone/phone1.svg";
 import phone2 from "@/assets/images/phone/phone2.png";
 import phone3 from "@/assets/images/phone/phone3.png";
@@ -201,9 +202,9 @@ function Email() {
 
         {/* Email page start active === 1  */}
         {active === 1 ? (
-          <div className="w-full h-[430px] border rounded-md p-3">
+          <div className="w-full border rounded-md p-3">
             <div className="mb-2 flex flex-col md:flex-row md:justify-between gap-4 font-semibold">
-              <div className="flex gap-5">
+              <div className="flex flex-wrap gap-3 md:gap-5">
                 <p
                   className={
                     emailBtn === 1
@@ -222,26 +223,36 @@ function Email() {
                   }
                   onClick={() => handleEmailbtn(2)}
                 >
-                  Enviar
+                  Prévia
                 </p>
                 <p
                   className={
                     emailBtn === 3
+                      ? "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
+                      : "cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
+                  }
+                  onClick={() => handleEmailbtn(3)}
+                >
+                  Enviar
+                </p>
+                <p
+                  className={
+                    emailBtn === 4
                       ? "md:hidden cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
                       : "md:hidden cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
                   }
-                  onClick={() => handleEmailbtn(3)}
+                  onClick={() => handleEmailbtn(4)}
                 >
                   Enviado!
                 </p>
               </div>
               <p
                 className={
-                  emailBtn === 3
+                  emailBtn === 4
                     ? "hidden md:block cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none bg-red-100"
                     : "hidden md:block cursor-pointer py-1 px-2 border border-gray-300 rounded-lg hover:bg-blue-100 select-none"
                 }
-                onClick={() => handleEmailbtn(3)}
+                onClick={() => handleEmailbtn(4)}
               >
                 Enviado!
               </p>
@@ -256,6 +267,38 @@ function Email() {
                 style={editorContainerStyle}
               />
             ) : emailBtn === 2 ? (
+              <div className="p-8 border border-gray-300 rounded-md mt-3">
+                <h2>
+                  Assunto:
+                  <span className="font-semibold">
+                    Você foi convidado por Clube Certo
+                  </span>
+                </h2>
+                <h3>
+                  De:
+                  <span className="font-semibold"> seuemail@email.com</span>
+                </h3>
+
+                <div className="my-5">
+                  <Image src={logo} alt="logo" width={180} height={120} />
+                </div>
+
+                <p className="font-bold">Você está dentro, [nome do usuário]</p>
+
+                <p className="mt-5 w-[70%]">
+                  [nome do usuário], você foi convidado a participar da
+                  platforma de benefícios no Clube Certo.
+                </p>
+                <p className="mt-3">Clique no link abaixo para iniciar.</p>
+
+                <p className="py-3 px-6 rounded-md bg-[#74EEAE] inline-block mt-5 font-semibold select-none cursor-pointer hover:bg-green-500 active:bg-green-600">
+                  ACEITAR CONVITE
+                </p>
+
+                <p className="mt-7 font-semibold">Seja bem vindo(a),</p>
+                <p className="mt-1 font-semibold">Time Clube Certo</p>
+              </div>
+            ) : emailBtn === 3 ? (
               <div className="py-10 p-5 border border-gray-300 rounded-md flex flex-col gap-5 mt-3">
                 <div className="w-full md:w-[60%] flex justify-start">
                   <TextField
