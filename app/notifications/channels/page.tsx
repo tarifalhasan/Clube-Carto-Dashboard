@@ -15,6 +15,8 @@ import BtnBox from "@/components/common/notifications/BtnBox";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
+import { SliderThumb } from "@mui/material/Slider";
+import { styled } from "@mui/material/styles";
 import {
   Button,
   FilledInput,
@@ -36,6 +38,46 @@ import {
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import Image from "next/image";
 import MapComponent from "@/components/common/notifications/MapComponent";
+
+const PrettoSlider = styled(Slider)({
+  color: "#52af77",
+  height: 8,
+  "& .MuiSlider-track": {
+    color: "#9C27B0",
+    border: "none",
+  },
+  "& .MuiSlider-thumb": {
+    height: 24,
+    width: 24,
+    backgroundColor: "#4DBE83",
+    border: "2px solid currentColor",
+    "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
+      boxShadow: "inherit",
+    },
+    "&:before": {
+      display: "none",
+    },
+  },
+  "& .MuiSlider-valueLabel": {
+    lineHeight: 1.2,
+    fontSize: 12,
+    background: "unset",
+    padding: 0,
+    width: 32,
+    height: 32,
+    borderRadius: "50% 50% 50% 0",
+    backgroundColor: "#52af77",
+    transformOrigin: "bottom left",
+    transform: "translate(50%, -100%) rotate(-45deg) scale(0)",
+    "&:before": { display: "none" },
+    "&.MuiSlider-valueLabelOpen": {
+      transform: "translate(50%, -100%) rotate(-45deg) scale(1)",
+    },
+    "& > *": {
+      transform: "rotate(45deg)",
+    },
+  },
+});
 
 const toolbarOptions = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }], // Header options
@@ -516,9 +558,13 @@ function Email() {
                   <div className="mb-5">
                     <h3 className="font-medium text-lg">Gênero</h3>
                     <div className="flex gap-3 mt-2">
-                      <p className="py-1 px-3 rounded-lg bg-green-400">Todos</p>
-                      <p className="py-1 px-3 rounded-lg">Masculino</p>
-                      <p className="py-1 px-3 rounded-lg">Feminino</p>
+                      <p className="py-1 px-3 rounded-lg bg-green-400 shadow-lg">
+                        Todos
+                      </p>
+                      <p className="py-1 px-3 rounded-lg shadow-lg">
+                        Masculino
+                      </p>
+                      <p className="py-1 px-3 rounded-lg shadow-lg">Feminino</p>
                     </div>
                   </div>
                   <div className="mb-5">
@@ -545,13 +591,17 @@ function Email() {
                     <h3 className="font-medium text-lg">Raio de alcanse</h3>
                     <div className="my-3 w-[70%] md:w-[50%] flex items-center gap-3">
                       <p className="w-[15%]">0 km</p>
-                      <Slider
+                      {/* <Slider
                         defaultValue={20}
-                        aria-label="Default"
+                        aria-label="large"
                         valueLabelDisplay="auto"
                         min={0}
                         max={50}
-                        color="secondary"
+                      /> */}
+                      <PrettoSlider
+                        valueLabelDisplay="auto"
+                        aria-label="pretto slider"
+                        defaultValue={20}
                       />
                       <p className="w-[18%]">50 km</p>
                     </div>
