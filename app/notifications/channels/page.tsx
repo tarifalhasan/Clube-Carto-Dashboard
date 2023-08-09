@@ -15,6 +15,8 @@ import BtnBox from "@/components/common/notifications/BtnBox";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
+import { SliderThumb } from "@mui/material/Slider";
+import { styled } from "@mui/material/styles";
 import {
   Button,
   FilledInput,
@@ -36,6 +38,46 @@ import {
 const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 import Image from "next/image";
 import MapComponent from "@/components/common/notifications/MapComponent";
+
+const PrettoSlider = styled(Slider)({
+  color: "#52af77",
+  height: 8,
+  "& .MuiSlider-track": {
+    color: "gray",
+    border: "none",
+  },
+  "& .MuiSlider-thumb": {
+    height: 24,
+    width: 24,
+    backgroundColor: "#4DBE83",
+    border: "2px solid currentColor",
+    "&:focus, &:hover, &.Mui-active, &.Mui-focusVisible": {
+      boxShadow: "inherit",
+    },
+    "&:before": {
+      display: "none",
+    },
+  },
+  "& .MuiSlider-valueLabel": {
+    lineHeight: 1.2,
+    fontSize: 12,
+    background: "unset",
+    padding: 0,
+    width: 32,
+    height: 32,
+    borderRadius: "50% 50% 50% 0",
+    backgroundColor: "#52af77",
+    transformOrigin: "bottom left",
+    transform: "translate(50%, -100%) rotate(-45deg) scale(0)",
+    "&:before": { display: "none" },
+    "&.MuiSlider-valueLabelOpen": {
+      transform: "translate(50%, -100%) rotate(-45deg) scale(1)",
+    },
+    "& > *": {
+      transform: "rotate(45deg)",
+    },
+  },
+});
 
 const toolbarOptions = [
   [{ header: [1, 2, 3, 4, 5, 6, false] }], // Header options
@@ -363,65 +405,94 @@ function Email() {
                     Agora vamos para a telado aplicativo seu cliente
                   </p>
 
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Imagem do estabelecimento"
-                  />
-                  <p className="font-semibold text-gray-500 mb-2">
+                  <div>
+                    <p className="text-sm">Imagem do estabelecimento</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <p className="font-semibold text-[#353A40] mb-2">
                     Página de notificação
                   </p>
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Título da página"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Título da notificação"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Descrição da notificação"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Código para copiar dentro da notificação"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Regras do desconto"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Botão de redirecionamento dentro do aplicativo (para uma pagina dentro ou fora do app)"
-                  />
-                  <TextField
-                    fullWidth
-                    size="small"
-                    variant="outlined"
-                    id="outlined-basic"
-                    label="Texto do botão de redirecionamento"
-                  />
+
+                  <div>
+                    <p className="text-sm">Título da página</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <p className="text-sm">Título da notificação</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <p className="text-sm">Descrição da notificação</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm">
+                      Código para copiar dentro da notificação
+                    </p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm">Regras do desconto</p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm">
+                      Botão de redirecionamento dentro do aplicativo
+                    </p>
+                    <p className="text-xs">
+                      (para uma pagina dentro ou fora do app)
+                    </p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <p className="text-sm">
+                      Texto do botão de redirecionamento
+                    </p>
+                    <input
+                      type="text"
+                      id="first_name"
+                      className="mt-1 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      required
+                    />
+                  </div>
                 </div>
                 <div>
                   <Image src={phone2} alt="phone2" height={230} width={230} />
@@ -473,7 +544,7 @@ function Email() {
 
                   <div className="mb-5">
                     <h3 className="font-medium text-lg">Idade</h3>
-                    <div className="w-[30%] flex justify-start gap-5">
+                    <div className="w-[60%] md:w-[25%] flex justify-start gap-5">
                       <FormControl fullWidth size="small">
                         <Select
                           labelId="demo-simple-select-label"
@@ -481,16 +552,15 @@ function Email() {
                           value={age}
                           onChange={handleChange}
                         >
-                          <NativeSelect
-                            defaultValue={22}
-                            inputProps={{
-                              name: "age",
-                              id: "uncontrolled-native",
-                            }}
-                          ></NativeSelect>
-                          <MenuItem value={10}>24</MenuItem>
-                          <MenuItem value={20}>50</MenuItem>
-                          <MenuItem value={30}>80</MenuItem>
+                          <MenuItem value={10}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
+                          <MenuItem value={20}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
+                          <MenuItem value={30}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
                         </Select>
                       </FormControl>
                       <FormControl fullWidth size="small">
@@ -500,16 +570,15 @@ function Email() {
                           value={age}
                           onChange={handleChange}
                         >
-                          <NativeSelect
-                            defaultValue={22}
-                            inputProps={{
-                              name: "age",
-                              id: "uncontrolled-native",
-                            }}
-                          ></NativeSelect>
-                          <MenuItem value={10}>24</MenuItem>
-                          <MenuItem value={20}>50</MenuItem>
-                          <MenuItem value={30}>80</MenuItem>
+                          <MenuItem value={10}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
+                          <MenuItem value={20}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
+                          <MenuItem value={30}>
+                            <span className="w-full text-center">24</span>
+                          </MenuItem>
                         </Select>
                       </FormControl>
                     </div>
@@ -518,9 +587,13 @@ function Email() {
                   <div className="mb-5">
                     <h3 className="font-medium text-lg">Gênero</h3>
                     <div className="flex gap-3 mt-2">
-                      <p className="py-1 px-3 rounded-lg bg-green-400">Todos</p>
-                      <p className="py-1 px-3 rounded-lg">Masculino</p>
-                      <p className="py-1 px-3 rounded-lg">Feminino</p>
+                      <p className="py-1 px-3 rounded-lg bg-green-400 shadow-lg">
+                        Todos
+                      </p>
+                      <p className="py-1 px-3 rounded-lg shadow-lg">
+                        Masculino
+                      </p>
+                      <p className="py-1 px-3 rounded-lg shadow-lg">Feminino</p>
                     </div>
                   </div>
                   <div className="mb-5">
@@ -543,18 +616,21 @@ function Email() {
                       </FormControl>
                     </div>
                   </div>
-
                   <div>
                     <h3 className="font-medium text-lg">Raio de alcanse</h3>
-                    <div className="my-3 w-[70%] flex items-center gap-3">
+                    <div className="my-3 w-[70%] md:w-[50%] flex items-center gap-3">
                       <p className="w-[15%]">0 km</p>
-                      <Slider
+                      {/* <Slider
                         defaultValue={20}
-                        aria-label="Default"
+                        aria-label="large"
                         valueLabelDisplay="auto"
                         min={0}
                         max={50}
-                        color="secondary"
+                      /> */}
+                      <PrettoSlider
+                        valueLabelDisplay="auto"
+                        aria-label="pretto slider"
+                        defaultValue={20}
                       />
                       <p className="w-[18%]">50 km</p>
                     </div>
