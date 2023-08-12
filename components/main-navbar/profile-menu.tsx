@@ -1,19 +1,17 @@
-import React from 'react';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Menubar,
   MenubarContent,
   MenubarItem,
   MenubarMenu,
   MenubarSeparator,
-  MenubarShortcut,
   MenubarTrigger,
-} from '@/components/ui/menubar';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { CgProfile } from 'react-icons/cg';
-import { AiOutlineSetting } from 'react-icons/ai';
-import { HiOutlineInboxStack } from 'react-icons/hi2';
-import { BiHelpCircle } from 'react-icons/bi';
-import { CiPower } from 'react-icons/ci';
+} from "@/components/ui/menubar";
+import { AiOutlineSetting } from "react-icons/ai";
+import { BiHelpCircle } from "react-icons/bi";
+import { CgProfile } from "react-icons/cg";
+import { CiPower } from "react-icons/ci";
+import { HiOutlineInboxStack } from "react-icons/hi2";
 const ProfileMenu = () => {
   return (
     <div className=" flex items-center">

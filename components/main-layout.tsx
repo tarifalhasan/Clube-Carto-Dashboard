@@ -1,7 +1,6 @@
-'use client';
-import React from 'react';
-import { useState } from 'react';
-import MainSidebar from '@/components/main-sidebar/main-sidebar';
+"use client";
+import MainSidebar from "@/components/main-sidebar/main-sidebar";
+import React, { useState } from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -16,7 +15,7 @@ const MainLayout: React.FC<Props> = ({ children }) => {
     <main className=" w-full h-full xl:flex ">
       <div
         className={`h-full   ${
-          !collapsed ? 'lg:min-w-[250px]' : 'lg:min-w-[80px]'
+          !collapsed ? "lg:min-w-[250px]" : "lg:min-w-[80px]"
         } hidden xl:block`}
       >
         <div className="fixed h-full">

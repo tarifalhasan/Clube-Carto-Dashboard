@@ -1,5 +1,4 @@
 "use client";
-import Logo from "@/assets/Logo";
 import {
   DiscountsSVG,
   FinanceiroIconSVG,
@@ -61,14 +60,6 @@ const CustomMenus = () => {
       }}
       className=" lg:px-4"
     >
-      <MenuItem
-        key="logo"
-        component={<Link href={"/"} />}
-        className="pt-7 pb-10"
-      >
-        <Logo />
-      </MenuItem>
-
       <MenuItem
         key="dashboard"
         component={<Link href="/" />}

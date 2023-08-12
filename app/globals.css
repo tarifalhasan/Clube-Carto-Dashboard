@@ -148,4 +148,28 @@ body {
     background: #fff;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.1);
   }
+  .ps-submenu-content.ps-active.ps-open.css-z5rm24 {
+    background-color: rgba(244, 244, 244, 0.8) !important;
+  }
+}
+/* Add this custom CSS to your stylesheet */
+.pro-sidebar {
+  /* Hide the vertical scrollbar */
+  overflow-y: hidden !important;
+}
+
+.pro-sidebar .pro-sidebar-inner {
+  /* Override the overflow setting for the inner content */
+  overflow: hidden !important;
+}
+ul,
+li {
+  list-style: none !important;
+}
+.css-um1o6k {
+  display: none !important;
+}
+
+.ps-menuitem-root .ps-menu-button {
+  padding-left: 6px !important;
 }

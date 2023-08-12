@@ -1,4 +1,5 @@
 "use client";
+import Logo from "@/assets/Logo";
 import { ArrowRigh } from "@/assets/svg/icons";
 import React from "react";
 import { Sidebar } from "react-pro-sidebar";
@@ -20,6 +21,9 @@ const MainSidebar: React.FC<SidebarProps> = ({
         collapsed={collapsed}
         transitionDuration={1000}
       >
+        <div className=" py-4 px-3 flex justify-center">
+          <Logo />
+        </div>
         <CustomMenus />
       </Sidebar>
       <div className="z-[999] absolute right-[-6%]  pt-10">
